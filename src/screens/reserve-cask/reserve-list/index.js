@@ -85,12 +85,6 @@ const ReserveList = () => {
                 openPrePopulate && <PrePopulateModal
                     isModal={openPrePopulate}
                     closeModal={closePrePopulate}
-                    title='Whiskey Reservation'
-                    footer={
-                        <button>
-
-                        </button>
-                    }
                 />
             }
         </>

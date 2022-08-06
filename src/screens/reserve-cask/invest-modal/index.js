@@ -3,6 +3,8 @@ import { ModalBase } from "#shared/components/ModalBase";
 
 import ConfirmPNG from './confirm.png' ;
 
+import { useTranslation } from "react-i18next";
+
 import { 
     ModalContainer,
     ModalTitle,
@@ -16,130 +18,39 @@ import {
     Label
 } from './styled' ;
 
-const PriceForm = () => {
-    const headFields = [
-        "WHISKEY PACKAGES",
-        "QUANTITY",
-        "EST. PRICE"
-    ]
+const HowMuchForm = (props) => {
+    const {
+        handleChangeStep
+    } = props ;
 
     return (
         <>
-            <TableContainer>
-                <table >
-                    <tr>
-                        {headFields.map((head, index) => (
-                            <td key={index}>
-                                {head}
-                            </td>
-                        ))}
-                    </tr>
-                    <tr>
-                        <td>American Whiskey</td>
-                        <td>
-                            <Input
-                                type='number'
-                            />
-                        </td>
-                        <td>$1,200</td>
-                    </tr>
-                    <tr>
-                        <td>{`New Age Scotch (Lightly Peated)`}</td>
-                        <td>
-                            <Input
-                                type='number'
-                            />
-                        </td>
-                        <td>$0</td>
-                    </tr>
-                    <tr>
-                        <td>{`New Age Scotch (Heavily Peated)`}</td>
-                        <td>
-                            <Input
-                                type='number'
-                            />
-                        </td>
-                        <td>${0}</td>
-                    </tr>
-                    <tr>
-                        <td>{`Total`}</td>
-                        <td>
-                        {`1`}
-                        </td>
-                        <td>$1,200</td>
-                    </tr>
-                </table>
-            </TableContainer>
-            <Button>
+            <FormGroup className={'row'}
+                style={{marginBottom : '40px'}}
+            >
+                <Label>
+                    Amount
+                </Label>
+                <Input type='number'
+                    placeholder="amount"
+                />
+            </FormGroup>
+            
+            <Button
+                type="button"
+                onClick={() => handleChangeStep('verification')}
+            >
                 <div>{"Continue"}</div>
             </Button>
         </>
     )
 }
 
-const CheckOut = () => {
-    const headFields = [
-        "WHISKEY PACKAGES",
-        "QUANTITY",
-        "EST. PRICE"
-    ]
+const SuccessConfirm = (props) => {
+    const {
+        closeModal
+    } = props ;
 
-    return (
-        <>
-            <TableContainer>
-                <table >
-                    <tr>
-                        {headFields.map((head, index) => (
-                            <td key={index}>
-                                {head}
-                            </td>
-                        ))}
-                    </tr>
-                    <tr>
-                        <td>American Whiskey</td>
-                        <td>
-                            0
-                        </td>
-                        <td>$1,200</td>
-                    </tr>
-                    <tr>
-                        <td>{`New Age Scotch (Lightly Peated)`}</td>
-                        <td>
-                            0
-                        </td>
-                        <td>$0</td>
-                    </tr>
-                    <tr>
-                        <td>{`New Age Scotch (Heavily Peated)`}</td>
-                        <td>
-                            0
-                        </td>
-                        <td>${0}</td>
-                    </tr>
-                    <tr>
-                        <td>{`Total`}</td>
-                        <td>
-                        {`1`}
-                        </td>
-                        <td>$1,200</td>
-                    </tr>
-                </table>
-            </TableContainer>
-            <Button
-                style={{marginBottom : '10px'}}
-            >
-                <div>{"Continue"}</div>
-            </Button>
-            <Button
-                color='transparent'
-            >
-                <div>{"Back"}</div>
-            </Button>
-        </>
-    )
-}
-
-const SuccessConfirm = () => {
     return (
         <>
             <div style={{fontSize : '20px'}}>
@@ -148,30 +59,21 @@ const SuccessConfirm = () => {
             <div style={{display : 'flex', justifyContent : 'center', alignItems : 'center', height : '300px'}}>
                 <img src={ConfirmPNG} />
             </div>
-            <Button>
+            <Button
+                onClick={closeModal}
+            >
                 Complete your account step
             </Button>
         </>
     )
 }
 
-const CongratsConfirm = () => {
-    return (
-        <>
-            <div style={{fontSize : '20px'}}>
-                You qualify to become one of our VIP investors. To skip the line, please schedule a call directly with our team.
-            </div>
-            <div style={{display : 'flex', justifyContent : 'center', alignItems : 'center', height : '300px'}}>
-                <img src={ConfirmPNG} />
-            </div>
-            <Button>
-                book a call
-            </Button>
-        </>
-    )
-}
+const Verification = (props) => {
 
-const Verification = () => {
+    const {
+        handleChangeStep
+    } = props ;
+
     return (
         <>
             <FormGroup>
@@ -192,11 +94,13 @@ const Verification = () => {
             </FormGroup>
             <Button
                 style={{marginBottom : '10px'}}
+                onClick={() => handleChangeStep('success')}
             >
                 <div>{"Continue"}</div>
             </Button>
             <Button
                 color='transparent'
+                onClick={() => handleChangeStep('verification')}
             >
                 <div>{"Back"}</div>
             </Button>
@@ -204,20 +108,29 @@ const Verification = () => {
     )
 }
 
-const InvestModal = ({ closeModal, title, content, footer }) => {
+const InvestModal = ({ closeModal }) => {
 
-    const [step, setStep] = React.useState() ;
-
+    const [step, setStep] = React.useState('how_much') ;
     
+    const { t } = useTranslation("reserve-cask");
+
     return (
         <>
             <ModalBase isOpen onClose={closeModal} borderRadius={20} additionalStyles={modalBaseStyles}>
                 <ModalContainer>
                     <ModalTitle>
-                        {title}
+                        {t(`reverse_modals.${step}.title`)}
                     </ModalTitle>
                     <ModalContent>
-                        {}
+                        {step === 'how_much' && <HowMuchForm 
+                            handleChangeStep={setStep}
+                        />}
+                        {step === 'verification' && <Verification
+                            handleChangeStep={setStep}
+                        />}
+                        {step === 'success' && <SuccessConfirm 
+                            closeModal={closeModal}
+                        />}
                     </ModalContent>
                 </ModalContainer>
             </ModalBase>

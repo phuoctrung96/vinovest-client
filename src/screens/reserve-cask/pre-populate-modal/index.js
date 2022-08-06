@@ -171,6 +171,7 @@ const SuccessConfirm = (props) => {
     const handleSuccess = () => {
         closeModal() ;
     }
+    
     return (
         <>
             <div style={{fontSize : '20px'}}>

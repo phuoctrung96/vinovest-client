@@ -69,7 +69,7 @@ export const Input = styled.input`
     border: 1px solid #EEEEEE;
     border-radius: 3px;
     outline : none ;
-    padding : 10px ;
+    padding : 20px ;
 `
 
 export const Button = styled.button`
@@ -96,10 +96,19 @@ export const Button = styled.button`
 `
 
 export const FormGroup = styled.div`
-    align-items : center ;
+    display : flex ;
+    
     padding : 10px ;
     display : flex ;
     gap : 15px;
+
+    &.col {
+        display : flex ;
+    }
+
+    &.row {
+        flex-direction : column ;
+    }
 
     margin-bottom : 20px;
 

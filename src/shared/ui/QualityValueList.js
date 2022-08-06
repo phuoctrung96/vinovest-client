@@ -17,8 +17,14 @@ const QualityValueList = ({ valueProps }) => {
     );
 };
 
-const Prop = ({ header, description, svg, index, hasRevealed, imgClassName }) => (
-    <PropContainer index={index + 1} className={hasRevealed ? "runAnimations" : ""}>
+const Prop = ({ header, description, svg, index, hasRevealed, imgClassName, clickEvent }) => (
+    <PropContainer index={index + 1} className={hasRevealed ? "runAnimations" : ""}
+        onClick={() => {
+            if(clickEvent) {
+                clickEvent() ;
+            }
+        }}
+    >
         <img className={`prop-img ${imgClassName}`} src={svg} alt="prop-img" />
         <span className="prop-header">{header}</span>
         <span className="prop-desc">{description}</span>
@@ -86,6 +92,8 @@ const PropContainer = styled.div`
     width: 100%;
     padding: 12px;
 
+    cursor : pointer ;
+    
     &.runAnimations {
         animation: ${FadeFromBottomWithDelay} ${({ index }) => 0.5 * index}s ease-out;
     }

@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import { useTranslation } from "react-i18next";
 import i18n from "i18next";
 import { Quality } from "#shared/ui/QualityValueList";
@@ -9,42 +9,67 @@ import RecessionPNG from "../assets/RecessionProof.png";
 import VisitPNG from "../assets/Visit.png";
 import BottledPNG from "../assets/Bottled.png";
 import HistoricalPNG from "../assets/Historical.png";
-
-
-const valueProps = [
-    {
-        description: i18n.t("reserve-cask:reserve_cask.benefits.description_1"),
-        svg: InsuredPNG,
-    },
-    {
-        description: i18n.t("reserve-cask:reserve_cask.benefits.description_2"),
-        svg: SamplePNG,
-    },
-    {
-        description: i18n.t("reserve-cask:reserve_cask.benefits.description_3"),
-        svg: RecessionPNG,
-    },
-    {
-        description: i18n.t("reserve-cask:reserve_cask.benefits.description_4"),
-        svg: VisitPNG,
-    },
-    {
-        description: i18n.t("reserve-cask:reserve_cask.benefits.description_5"),
-        svg: BottledPNG,
-    },
-    {
-        description: i18n.t("reserve-cask:reserve_cask.benefits.description_6"),
-        svg: HistoricalPNG,
-    },
-];
+import InvestModal from "../invest-modal";
 
 const QualityWrapper = () => {
     const { t } = useTranslation("reserve-cask");
+
+    const [openInvestModal, setOpenInvestModal] = React.useState(false) ;
+
+    const closeModal = () => {
+        setOpenInvestModal(!openInvestModal) ;
+    }
+
+    const clickEvent = () => {
+        setOpenInvestModal(true) ;
+    }
+
+    const valueProps = [
+        {
+            description: i18n.t("reserve-cask:reserve_cask.benefits.description_1"),
+            svg: InsuredPNG,
+            clickEvent : clickEvent
+        },
+        {
+            description: i18n.t("reserve-cask:reserve_cask.benefits.description_2"),
+            svg: SamplePNG,
+            clickEvent : clickEvent
+        },
+        {
+            description: i18n.t("reserve-cask:reserve_cask.benefits.description_3"),
+            svg: RecessionPNG,
+            clickEvent : clickEvent
+        },
+        {
+            description: i18n.t("reserve-cask:reserve_cask.benefits.description_4"),
+            svg: VisitPNG,
+            clickEvent : clickEvent
+        },
+        {
+            description: i18n.t("reserve-cask:reserve_cask.benefits.description_5"),
+            svg: BottledPNG,
+            clickEvent : clickEvent
+        },
+        {
+            description: i18n.t("reserve-cask:reserve_cask.benefits.description_6"),
+            svg: HistoricalPNG,
+            clickEvent : clickEvent
+        },
+    ];
+
     return (
-        <Quality
-            valueProps={valueProps}
-            title={t("reserve_cask.benefits.title")}
-        />
+        <>
+            <Quality
+                valueProps={valueProps}
+                title={t("reserve_cask.benefits.title")}
+            />
+            {
+                openInvestModal && <InvestModal 
+                    isModal={openInvestModal}
+                    closeModal={closeModal}
+                />
+            }
+        </>
     );
 };
 

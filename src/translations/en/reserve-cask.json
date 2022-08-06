@@ -81,7 +81,7 @@
             }
         }
     },
-    "pre_populate" : {
+    "reverse_modals" : {
         "whiskey_reservation" : {
             "title" : "Whiskey Reservation"
         },
