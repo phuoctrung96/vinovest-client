@@ -81,16 +81,18 @@ const ReserveList = () => {
                 </BrandDiv>
             </ReserveListDiv>
 
-            <PrePopulateModal
-                isModal={openPrePopulate}
-                closeModal={closePrePopulate}
-                title='Whiskey Reservation'
-                footer={
-                    <button>
+            {
+                openPrePopulate && <PrePopulateModal
+                    isModal={openPrePopulate}
+                    closeModal={closePrePopulate}
+                    title='Whiskey Reservation'
+                    footer={
+                        <button>
 
-                    </button>
-                }
-            />
+                        </button>
+                    }
+                />
+            }
         </>
     )
 }
