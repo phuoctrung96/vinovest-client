@@ -295,16 +295,12 @@ export const NavAnimationContainer = styled.div`
         transition: transform 0.7s;
         z-index: 1;
         opacity: 1;
-        display :block ;
     }
 
     &.closeBavBar {
         transition: transform 0.5s;
         transform: translateY(-101%);
         opacity: 1;
-
-        display : none ;
-        border : 10px solid red ;
     }
 `;
 
