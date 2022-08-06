@@ -48,6 +48,27 @@ export const NAVIGATION_LINKS_USER = [
     },
 ];
 
+export const NAVIGATION_SUB_LINKS = [
+    {
+        to: ROUTE_PATHS.aboutUs,
+        label: i18n.t("common:about"),
+        exact: true,
+        isActive: isMatch,
+    },
+    {
+        to: ROUTE_PATHS.blog,
+        label: i18n.t("common:blog"),
+        exact: true,
+        isActive: isMatch,
+    },
+    {
+        to: ROUTE_PATHS.help,
+        label: i18n.t("common:help"),
+        exact: true,
+        isActive: isMatch,
+    }
+]
+
 export const NAVIGATION_LINKS_GUEST = [
     {
         to: ROUTE_PATHS.whyWine,

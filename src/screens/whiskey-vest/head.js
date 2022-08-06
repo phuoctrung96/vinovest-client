@@ -10,7 +10,7 @@ import { useCreateRoutingCallback } from "#shared/hooks";
 const Head = () => {
     const { t } = useTranslation("whiskey-vest");
 
-    const routeToReservCask = useCreateRoutingCallback("/reserve-cask", { refresh: true });
+    const routeToReservCask = useCreateRoutingCallback("/reserve-cask", { refresh: false });
 
     return (
         <HeadContainer>

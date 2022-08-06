@@ -258,7 +258,6 @@ export const NavUpdates = styled(Updates)`
 `;
 
 export const NavAnimationWrapper = styled.div`
-    overflow: hidden;
     position: relative;
 
     &.sticky {
@@ -296,12 +295,16 @@ export const NavAnimationContainer = styled.div`
         transition: transform 0.7s;
         z-index: 1;
         opacity: 1;
+        display :block ;
     }
 
     &.closeBavBar {
         transition: transform 0.5s;
         transform: translateY(-101%);
         opacity: 1;
+
+        display : none ;
+        border : 10px solid red ;
     }
 `;
 
@@ -389,9 +392,3 @@ export const Beta = styled.span`
     border-bottom-left-radius: 0;
     color: #ffffff;
 `;
-
-export const SubNavLinksPop = styled.div`
-    position : fixed ;
-    top : ${(p) => p.bottom} ;
-    border : 1px solid red ;
-`

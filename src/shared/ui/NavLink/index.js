@@ -73,3 +73,40 @@ export const StyledNavLink = styled(I18nNavLink).attrs({ activeClassName })`
 export const LinkHtml = styled.a`
     ${styles};
 `;
+
+export const SubNavLinks = styled.div`
+    width : 250px ;
+
+    background : white ;
+
+    position : relative ;
+
+    border-radius : 10px;
+    padding : 10px;
+
+    &:after {
+        position : absolute ;
+        height : 20px;
+        width : 20px ;
+
+        content : " " ;
+        
+        top : -10px;
+        left : 25px;
+        transform : rotate(45deg) ;
+
+        background : white ;
+
+    }
+`
+export const SubNavLinksDiv = styled.div`
+    padding-top : 45px ;
+
+    z-index : 15;
+
+    display : ${props => props.isHidden ? "none" : 'block'} ;
+
+    top : ${props => props.top}px ;
+    left : ${props => props.left - 30}px ;
+    position : fixed ;
+`

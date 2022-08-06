@@ -1,9 +1,10 @@
 /* eslint-disable import/no-unresolved */
 /* eslint-disable import/extensions */
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { observer } from "mobx-react-lite";
 import { useRootStore, useMobile, useCreateRoutingCallback } from "#shared/hooks";
+import { useHistory } from 'react-router-dom' ;
 import useIsSticky from "#shared/hooks/useIsSticky";
 import { checkHasToken } from "#utils/shared";
 import { StyledNavWrapper, FixedNavWrapper } from "./Navigation.styled";
@@ -15,11 +16,23 @@ import { chooseClassName, hideForLogin } from "./utils";
 import { DepositEvent } from "#screens/deposit/RootDepositPage";
 import { getStatus } from "#models/FetchStatus";
 import MobileRightMenu from "./components/MobileRightMenu";
+import { NavLink, LinkHtml, SubNavLinks, SubNavLinksDiv } from "#shared/ui";
+import { NAVIGATION_SUB_LINKS } from "./NavLinksData";
+import styled from 'styled-components' ;
 
 interface AppHeaderProps {
     hideForLogin: boolean;
 }
 export const AppHeader: React.FC<AppHeaderProps> = observer(() => {
+    const sub_link_descriptions = [
+        'Democratizing Fine Wine Investing',
+        'How can we help you?',
+        "The Cellar"
+    ] ;
+
+    const  [openSubLinks, setOpenSubLink] = useState(false) ;
+
+    const navigate = useHistory() ;
     const store = useRootStore();
     const { pathname } = useLocation();
     const routeToDeposit = useCreateRoutingCallback("/deposit", { refresh: true, posthogId: DepositEvent.AddFunds });
@@ -112,19 +125,52 @@ export const AppHeader: React.FC<AppHeaderProps> = observer(() => {
                                 }}
                             />
                         ) : (
-                            <DesktopNavWrapper
-                                {...{
-                                    classNameHeader,
-                                    isOnboarding,
-                                    logoType,
-                                    isSticky,
-                                    height,
-                                    isAddFunds,
-                                    authenticated,
-                                    pagesWithAnimation,
-                                    isNewUserABTest,
-                                }}
-                            />
+                            <>
+                                <DesktopNavWrapper
+                                    {...{
+                                        classNameHeader,
+                                        isOnboarding,
+                                        logoType,
+                                        isSticky,
+                                        height,
+                                        isAddFunds,
+                                        authenticated,
+                                        pagesWithAnimation,
+                                        isNewUserABTest,
+                                        setOpenSubLink
+                                    }}
+                                />
+                                <SubNavLinksDiv
+                                    top={document.getElementsByClassName('_xto_')[isSticky ? 1 : 0]?.getBoundingClientRect().bottom}
+                                    left={document.getElementsByClassName('_xto_')[isSticky ? 1 : 0]?.getBoundingClientRect().left}
+                                    onMouseOver={() => setOpenSubLink(true)}
+                                    onMouseOut={() => setOpenSubLink(false)}
+                                    isHidden={!openSubLinks}
+                                >
+                                    <SubNavLinks 
+                                        top={document.getElementsByClassName('_xto_')[isSticky ? 1 : 0]?.getBoundingClientRect().bottom}
+                                        left={document.getElementsByClassName('_xto_')[isSticky ? 1 : 0]?.getBoundingClientRect().left}
+                                    >
+                                        {
+                                            NAVIGATION_SUB_LINKS.map((item, index) => (
+                                                <LinkItemDiv key={index}
+                                                    onClick={() => {
+                                                        setOpenSubLink(false) ;
+                                                        navigate.push(item.to) ;
+                                                    }}
+                                                >
+                                                    <LinkLabelDiv>
+                                                        {item.label}
+                                                    </LinkLabelDiv>
+                                                    <LinkDescriptionDiv>
+                                                        {sub_link_descriptions[index]}
+                                                    </LinkDescriptionDiv>
+                                                </LinkItemDiv>
+                                            ))
+                                        }
+                                    </SubNavLinks>
+                                </SubNavLinksDiv>
+                            </>
                         )}
                     </FixedNavWrapper>
                 </StyledNavWrapper>
@@ -132,3 +178,21 @@ export const AppHeader: React.FC<AppHeaderProps> = observer(() => {
         </>
     );
 });
+
+const LinkItemDiv = styled.div`
+    padding-top : 10px ;
+    padding-bottom : 10px ;
+    cursor : pointer ;
+    border-bottom : 1px solid #EEEEEE;
+`
+
+const LinkDescriptionDiv = styled.div`
+    font-family : VinovestMedium ;
+    font-size : 12px; 
+    color : lightgray ;
+    padding-top : 3px;
+`
+const LinkLabelDiv = styled.div`
+    font-size : 14px;
+    font-family : VinovestMedium ;
+`
