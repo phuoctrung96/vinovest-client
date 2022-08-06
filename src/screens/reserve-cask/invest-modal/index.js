@@ -119,7 +119,7 @@ const InvestModal = ({ closeModal }) => {
             <ModalBase isOpen onClose={closeModal} borderRadius={20} additionalStyles={modalBaseStyles}>
                 <ModalContainer>
                     <ModalTitle>
-                        {t(`reverse_modals.${step}.title`)}
+                        {t(`reserve_modals.${step}.title`)}
                     </ModalTitle>
                     <ModalContent>
                         {step === 'how_much' && <HowMuchForm 

@@ -45,7 +45,7 @@ const ReservationForm = (props) => {
                     </thead>
                     <tbody>
                         <tr>
-                            <td>{t(`pre_populate.whiskey_reservation.title`)}</td>
+                            <td>{t(`reserve_modals.whiskey_reservation.title`)}</td>
                             <td>
                                 <Input
                                     type='number'
@@ -255,7 +255,7 @@ const PrePopulateModal = ({ closeModal }) => {
             <ModalBase isOpen onClose={closeModal} borderRadius={20} additionalStyles={modalBaseStyles}>
                 <ModalContainer>
                     <ModalTitle>
-                        {t(`pre_populate.${step}.title`)}
+                        {t(`reserve_modals.${step}.title`)}
                     </ModalTitle>
                     <ModalContent>
                         {
