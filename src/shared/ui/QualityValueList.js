@@ -76,7 +76,6 @@ const CustomModuleContainer = styled.div`
     max-width: 1200px;
     width: 100%;
     flex-direction: column;
-
     ${(p) => p.theme.media.greaterThan("991px")`
         flex-direction: row;
         flex-wrap: wrap;
@@ -91,6 +90,8 @@ const PropContainer = styled.div`
     max-width: 28.7%;
     width: 100%;
     padding: 12px;
+
+    margin-bottom : 30px ;
 
     cursor : pointer ;
     

@@ -30,6 +30,13 @@ const BrandsListDiv = styled.div`
     display : flex;
     justify-content : space-around;
     align-items : center;
+    flex-wrap : wrap ;
+    gap : 30px ;
+
+    padding-left : 50px;
+    padding-right : 50px ;
+
+    padding-bottom : 70px;
 `
 
 export default Brands ;

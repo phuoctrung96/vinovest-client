@@ -277,5 +277,9 @@ export const TopImagesDiv = styled.div`
     padding-right : 60px;
 
     position : absolute ;
+
+    @media screen and (max-width: 820px) {
+        display : none ;
+    }
 `
 

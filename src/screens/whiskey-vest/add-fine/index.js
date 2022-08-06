@@ -24,7 +24,6 @@ const AddFine = () => {
                 </TitleDiv>
             </TitleWrapper>
             <AddFineDiv >
-                
                 <GlassDiv>
                     <img src={glassPNG} />
                 </GlassDiv>
@@ -54,17 +53,42 @@ const AddFineDiv = styled.div`
         top: 20%;
         left: 15%;
         z-index : 3 ;
+
+        @media screen and (max-width: 1055px) {
+            width : 90%;
+            height : 70% ;
+            top: 15%;
+            left: 5%;
+        }
+
+        @media screen and (max-width: 595px) {
+            width : 100%;
+            height : 70% ;
+            top: 15%;
+            left : 0;
+        }
     }
 `
 
 const LeftDiv = styled.div`
     position : relative ;
     z-index : 5 ;
+
+    & img {
+        @media screen and (max-width: 595px) {
+            width : 100%;
+        }
+    }
+
 `
 
 const RightDiv = styled.div`
     padding-top : 200px;
     z-index : 5 ;
+
+    @media screen and (max-width: 1055px) {
+        display : none ;
+    }
 `
 
 const GlassDiv = styled.div`
@@ -73,6 +97,10 @@ const GlassDiv = styled.div`
     display : flex;
     justify-content : flex-end;
     position : absolute ;
+
+    @media screen and (max-width: 1055px) {
+        display : none ;
+    }
 `
 
 const TitleDiv = styled.div`
@@ -86,6 +114,10 @@ const TitleDiv = styled.div`
     text-align: center;
     margin: 0;
     color: #242e35;
+
+    @media screen and (max-width: 750px) {
+        font-size : 48px;
+    }
 `
 
 const TitleWrapper = styled.div`
