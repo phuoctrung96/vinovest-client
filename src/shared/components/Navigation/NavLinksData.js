@@ -60,6 +60,9 @@ export const NAVIGATION_LINKS_GUEST = [
         label: i18n.t("common:how-it-works"),
         exact: true,
         isActive: isMatch,
+        sublinks : [
+          
+        ]
     },
     {
         to: ROUTE_PATHS.aboutUs,
@@ -76,6 +79,12 @@ export const NAVIGATION_LINKS_GUEST = [
     {
         to: ROUTE_PATHS.help,
         label: i18n.t("common:help"),
+        exact: true,
+        isActive: isMatch,
+    },
+    {
+        to: ROUTE_PATHS.whiskeyVest,
+        label: i18n.t("common:whiskey-vest"),
         exact: true,
         isActive: isMatch,
     },

@@ -104,7 +104,7 @@ const StyledModal = styled.div`
 
 const CloseIcon = styled.img`
     position: absolute;
-    top: 20px;
+    top: 10px;
     right: 20px;
     cursor: pointer;
     z-index: 100;

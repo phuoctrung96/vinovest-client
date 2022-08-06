@@ -52,6 +52,8 @@ const PressPage = lazy(() => import("./press/index.js"));
 const Accessibility = lazy(() => import("./accessibility/index"));
 const Trading = lazy(() => import("./trading/index"));
 const Community = lazy(() => import("./community/index"));
+const WhiskeyVest = lazy(() => import("./whiskey-vest/index")) ;
+const ReserveCask = lazy(() => import("./reserve-cask")) ;
 
 const AllRedirects = Object.values(REDIRECT_PATHS).reduce((acc, { paths, options }) => {
     const { isSecure, exact, ...rest } = options;
@@ -200,7 +202,7 @@ export const Routes = [
     {
         path: ROUTE_PATHS.aboutUs,
         exact: true,
-        component: AboutUs,
+        component: AboutUs, 
     },
     {
         path: ROUTE_PATHS.council,
@@ -211,6 +213,16 @@ export const Routes = [
         path: ROUTE_PATHS.howItWorks,
         exact: true,
         component: HowItWorksPage,
+    },
+    {
+        path : ROUTE_PATHS.whiskeyVest,
+        expect : true,
+        component : WhiskeyVest
+    },
+    {
+        path : ROUTE_PATHS.reserverCask,
+        expect : true,
+        component : ReserveCask
     },
     {
         path: ROUTE_PATHS.sustainability,

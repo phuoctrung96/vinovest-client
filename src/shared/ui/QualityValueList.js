@@ -11,7 +11,7 @@ const QualityValueList = ({ valueProps }) => {
     return (
         <CustomModuleContainer ref={ref} isRow>
             {valueProps.map((p, i) => (
-                <Prop key={p.header} {...p} index={i} hasRevealed={hasRevealed} />
+                <Prop key={i} {...p} index={i} hasRevealed={hasRevealed} />
             ))}
         </CustomModuleContainer>
     );

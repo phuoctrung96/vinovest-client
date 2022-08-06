@@ -389,3 +389,9 @@ export const Beta = styled.span`
     border-bottom-left-radius: 0;
     color: #ffffff;
 `;
+
+export const SubNavLinksPop = styled.div`
+    position : fixed ;
+    top : ${(p) => p.bottom} ;
+    border : 1px solid red ;
+`

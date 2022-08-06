@@ -68,6 +68,9 @@ export const DesktopNavBar: React.FC<DesktopNavigationBarProps> = observer(
                                         ) : null}
 
                                         {label}
+                                        {
+
+                                        }
                                         {label === "trade" && <Beta>Beta</Beta>}
                                     </NavLink>
                                 )}
