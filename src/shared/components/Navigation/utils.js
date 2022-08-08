@@ -27,7 +27,7 @@ export const chooseClassName = ({ authenticated, isMobile, pathname, isSticky })
         logoType = "green";
     }
 
-    if (["/vinovest-100-index", "/why-wine", "/advisors", "/wine-futures", "/whiskeyvest"].includes(pathname)) {
+    if (["/vinovest-100-index", "/why-wine", "/advisors", "/wine-futures", "/whiskeyvest", "/reserve-cask"].includes(pathname)) {
         classNameHeader = "darkBlue";
         logoType = "light";
     }

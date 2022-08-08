@@ -4,6 +4,7 @@ export const pagesWithAnimationList = [
     "/advisors",
     "/wine-futures",
     "/whiskeyvest",
+    "/reserve-cask",
     "/home",
     "/about-us",
     "/how-it-works",
