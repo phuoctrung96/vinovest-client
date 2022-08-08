@@ -104,14 +104,20 @@ export const NAVIGATION_LINKS_GUEST = [
         isActive: isMatch,
     },
     {
+        to : ROUTE_PATHS.marketPlace,
+        label : i18n.t("common:marketPlace"),
+        exact : true,
+        isActive : isMatch,
+    },
+    {
         to: ROUTE_PATHS.whiskeyVest,
         label: i18n.t("common:whiskey-vest"),
         exact: true,
         isActive: isMatch,
     },
-    {
-        to: ROUTE_PATHS.trading,
-        label: i18n.t("common:trade"),
-        exact: true,
-    },
+    // {
+    //     to: ROUTE_PATHS.trading,
+    //     label: i18n.t("common:trade"),
+    //     exact: true,
+    // },
 ];

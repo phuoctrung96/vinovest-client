@@ -16,7 +16,8 @@ export const ROUTE_PATHS = {
 
     whyWine: "/why-wine",
     aboutUs: "/about-us",
-    whiskeyVest : "/whiskey-vest",
+    marketPlace : "/marketPlace",
+    whiskeyVest : "/whiskeyvest",
     reserverCask : "/reserve-cask",
     council: "/advisory-council",
     advisors: "/advisors",

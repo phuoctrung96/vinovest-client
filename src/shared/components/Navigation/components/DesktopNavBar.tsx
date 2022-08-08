@@ -86,7 +86,7 @@ export const DesktopNavBar: React.FC<DesktopNavigationBarProps> = observer(
                                                         }}
                                                     >{label}</span>
                                                     
-                                                    {label === "trade" && <Beta>Beta</Beta>}
+                                                    {label === "WISKEY VEST" && <Beta>NEW</Beta>}
                                                 </NavLink>    
                                             )
                                         )

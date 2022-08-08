@@ -3,6 +3,7 @@ export const pagesWithAnimationList = [
     "/why-wine",
     "/advisors",
     "/wine-futures",
+    "/whiskeyvest",
     "/home",
     "/about-us",
     "/how-it-works",

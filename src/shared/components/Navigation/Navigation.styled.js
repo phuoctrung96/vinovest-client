@@ -380,8 +380,8 @@ export const Beta = styled.span`
     font-size: 8px;
     line-height: 1;
     top: ${(p) => (p.isMobile ? "10px" : "-20px")};
-    left: ${(p) => (p.isMobile ? "70px" : "60px")};
-    background: #51ac55;
+    left: ${(p) => (p.isMobile ? "120px" : "90px")};
+    background: #4589cf;
     padding: 4px 4px;
     text-transform: uppercase;
     border-radius: 2px;
