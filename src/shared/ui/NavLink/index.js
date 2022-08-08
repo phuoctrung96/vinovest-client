@@ -65,6 +65,7 @@ export const StyledNavLink = styled(I18nNavLink).attrs({ activeClassName })`
         &.darkBlue {
             &:after {
                 border-bottom: 2px solid #efddc7;
+                width : 100%;
             }
         }
     }
@@ -75,7 +76,7 @@ export const LinkHtml = styled.a`
 `;
 
 export const SubNavLinks = styled.div`
-    width : 250px ;
+    width : 300px ;
 
     background : white ;
 
@@ -100,7 +101,7 @@ export const SubNavLinks = styled.div`
     }
 `
 export const SubNavLinksDiv = styled.div`
-    padding-top : 45px ;
+    padding-top : 50px ;
 
     z-index : 15;
 

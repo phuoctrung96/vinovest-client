@@ -200,11 +200,10 @@ const LinkItemDiv = styled.div`
 
 const LinkDescriptionDiv = styled.div`
     font-family : VinovestMedium ;
-    font-size : 12px; 
-    color : gray ;
+    font-size : 14px; 
     padding-top : 3px;
 `
 const LinkLabelDiv = styled.div`
-    font-size : 14px;
-    font-family : VinovestMedium ;
+    font-size : 20px;
+    font-family : RoslindaleDisplayCondensed ;
 `

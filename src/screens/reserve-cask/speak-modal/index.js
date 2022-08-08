@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 
 import "@amir04lm26/react-modern-calendar-date-picker/lib/DatePicker.css";
 import { Calendar } from "@amir04lm26/react-modern-calendar-date-picker";
+import arrowLeft from './assets/arrow-left.svg' ;
 
 import { 
     ModalContainer,
@@ -18,7 +19,8 @@ import {
     GridItem,
     SectionDiv,
     ModalFooter,
-    MarkDiv
+    MarkDiv,
+    ArrowBackDiv
 } from './styled' ;
 
 const SpeakModal = ({ closeModal }) => {
@@ -59,6 +61,9 @@ const SpeakModal = ({ closeModal }) => {
                             <GridItem>
                                 <div style={{display:'flex', flexDirection:'column', justifyContent:'flex-end', height: '100%'}}>
                                     <DescriptionDiv>
+                                        <ArrowBackDiv>
+                                            <img src={arrowLeft} />
+                                        </ArrowBackDiv>
                                         <LogoDiv>
                                             Vino Vest
                                         </LogoDiv>

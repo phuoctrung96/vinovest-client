@@ -122,3 +122,18 @@ export const Grid = styled.div`
 
 export const GridItem = styled.div`
 `
+
+export const ArrowBackDiv = styled.div`
+    width : 40px;
+    height : 40px;
+
+    border-radius : 50%;
+
+    border : 1px solid lightgray;
+
+    display : flex;
+    justify-content : center;
+    align-items : center;
+
+    margin-bottom : 20px; 
+`

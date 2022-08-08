@@ -115,6 +115,8 @@ const TitleDiv = styled.div`
     margin: 0;
     color: #242e35;
 
+    max-width : 600px;
+
     @media screen and (max-width: 750px) {
         font-size : 48px;
     }
