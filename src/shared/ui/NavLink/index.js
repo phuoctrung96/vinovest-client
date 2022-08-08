@@ -24,6 +24,12 @@ export const StyledNavLink = styled(I18nNavLink).attrs({ activeClassName })`
     padding-left: ${(p) => (p.isTrading ? "26px" : "0")};
     border-left: ${(p) => (p.isTrading ? "1px solid #242E35" : "0")};
 
+    &.login {
+        &:after {
+            width : 50% !important ;
+        }
+    }
+
     &.${activeClassName} {
         color: ${(p) => (p.authenticated ? "#a86d37" : "#242e35")};
 
@@ -37,6 +43,8 @@ export const StyledNavLink = styled(I18nNavLink).attrs({ activeClassName })`
             width: 26px;
             border-bottom: 2px solid ${({ theme }) => theme.colors.mainAccentBlue};
             padding-bottom: 5px;
+
+            width : 100%;
         }
         &.transparent {
             &:after {
