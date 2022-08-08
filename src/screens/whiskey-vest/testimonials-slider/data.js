@@ -1,8 +1,8 @@
 import React from "react";
 import i18n from "i18next";
-import WorthPNG from "../assets/worth.png";
-import KnightPNG from "../assets/knight.png";
-import BarronJPG from "../assets/barron.jpg";
+import WorthPNG from "#assets/whiskey-vest/worth.png";
+import KnightPNG from "#assets/whiskey-vest/knight.png";
+import BarronJPG from "#assets/whiskey-vest/barron.jpg";
 
 export const testimonialsSliderData = [
     {

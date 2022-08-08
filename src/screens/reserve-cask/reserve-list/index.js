@@ -1,10 +1,10 @@
 import * as React from 'react' ;
 import styled from 'styled-components';
 
-import AmericanPNG from './assets/american.png' ;
-import NewAgeScotchPNG from './assets/new_age_scotch.png' ;
-import UltraRareScotchPNG from './assets/ultra_rare_scotch.png' ;
-import StairPNG from "./assets/stair.png";
+import AmericanPNG from '#assets/reserve-cask/american.png' ;
+import NewAgeScotchPNG from '#assets/reserve-cask/new_age_scotch.png' ;
+import UltraRareScotchPNG from '#assets/reserve-cask/ultra_rare_scotch.png' ;
+import StairPNG from "#assets/reserve-cask/stair.png";
 
 import { useTranslation } from 'react-i18next';
 import PrePopulateModal from '../pre-populate-modal';

@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 
 import "@amir04lm26/react-modern-calendar-date-picker/lib/DatePicker.css";
 import { Calendar } from "@amir04lm26/react-modern-calendar-date-picker";
-import arrowLeft from './assets/arrow-left.svg' ;
+import arrowLeft from '#assets/shared/arrow-left.svg' ;
 
 import { 
     ModalContainer,

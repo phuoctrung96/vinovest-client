@@ -3,12 +3,12 @@ import { useTranslation } from "react-i18next";
 import i18n from "i18next";
 import { Quality } from "#shared/ui/QualityValueList";
 
-import InsuredPNG from "../assets/Insured.png";
-import SamplePNG from "../assets/Sample.png";
-import RecessionPNG from "../assets/RecessionProof.png";
-import VisitPNG from "../assets/Visit.png";
-import BottledPNG from "../assets/Bottled.png";
-import HistoricalPNG from "../assets/Historical.png";
+import InsuredPNG from "#assets/reserve-cask/Insured.png";
+import SamplePNG from "#assets/reserve-cask/Sample.png";
+import RecessionPNG from "#assets/reserve-cask/RecessionProof.png";
+import VisitPNG from "#assets/reserve-cask/Visit.png";
+import BottledPNG from "#assets/reserve-cask/Bottled.png";
+import HistoricalPNG from "#assets/reserve-cask/Historical.png";
 import InvestModal from "../invest-modal";
 
 const QualityWrapper = () => {

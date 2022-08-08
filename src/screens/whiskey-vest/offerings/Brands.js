@@ -1,10 +1,10 @@
 import * as React from 'react' ;
 import styled from 'styled-components';
-import Benriach from '../assets/benriach.png';
-import Lagavulin from '../assets/lagavulin.png';
-import Macallan from '../assets/macallan.png';
-import Highland from '../assets/highland.png';
-import Ardmore from '../assets/ardmore.png';
+import Benriach from '#assets/whiskey-vest/benriach.png';
+import Lagavulin from '#assets/whiskey-vest/lagavulin.png';
+import Macallan from '#assets/whiskey-vest/macallan.png';
+import Highland from '#assets/whiskey-vest/highland.png';
+import Ardmore from '#assets/whiskey-vest/ardmore.png';
 
 const Brands = () => {
     const brandsImgList = [

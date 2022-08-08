@@ -6,10 +6,10 @@ import { useHistory } from "#shared/hooks/useHistory";
 import { Quality, CustomModuleContainer, PropContainer, Container, TopTitle } from "#shared/ui/QualityValueList";
 
 import WithLayersButton from "#shared/ui/WithLayersButton";
-import expertSvg from "../assets/expert.svg";
-import lowriskSvg from "../assets/lowrisk.svg";
-import hasslefreeSvg from "../assets/hasslefree.svg";
-import morelessSvg from "../assets/moreless.svg";
+import expertSvg from "#assets/whiskey-vest/expert.svg";
+import lowriskSvg from "#assets/whiskey-vest/lowrisk.svg";
+import hasslefreeSvg from "#assets/whiskey-vest/hasslefree.svg";
+import morelessSvg from "#assets/whiskey-vest/moreless.svg";
 
 const valueProps = [
     {

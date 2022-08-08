@@ -3,9 +3,9 @@ import styled from 'styled-components';
 
 import { useTranslation } from "react-i18next";
 
-import firstPNG from './assets/first.png' ;
-import secondPNG from './assets/second.png' ;
-import glassPNG from './assets/glass.svg' ;
+import firstPNG from '#assets/whiskey-vest/first.png' ;
+import secondPNG from '#assets/whiskey-vest/second.png' ;
+import glassPNG from '#assets/whiskey-vest/glass.svg' ;
 
 const AddFine = () => {
 

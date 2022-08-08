@@ -1,7 +1,7 @@
 import * as React from "react";
 import { ModalBase } from "#shared/components/ModalBase";
 
-import ConfirmPNG from './confirm.png' ;
+import ConfirmPNG from '#assets/reserve-cask/confirm.png' ;
 import { useTranslation } from "react-i18next";
 
 import { 

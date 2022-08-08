@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { HeroTitle, HeroDescription } from "#shared/ui/Typography/styled";
 import WithLayersButton from "#shared/ui/WithLayersButton";
 import MetaTagsReplacer from "#shared/components/MetaTagsReplacer";
-import WhiskeyBoxs from "./assets/whiskeyBoxs.png";
+import WhiskeyBoxs from "../../assets/whiskey-vest/whiskeyBoxs.png";
 import { useCreateRoutingCallback } from "#shared/hooks";
 
 const Head = () => {

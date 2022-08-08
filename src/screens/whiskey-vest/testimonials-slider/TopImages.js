@@ -2,8 +2,8 @@ import * as React from 'react' ;
 
 import { TopImagesDiv } from './styled' ;
 
-import phonePNG from '../assets/Phone.png' ;
-import barelyPNG from '../assets/Barely.png' ;
+import phonePNG from '../../../assets/whiskey-vest/Phone.png' ;
+import barelyPNG from '../../../assets/whiskey-vest/Barely.png' ;
 
 const TopImages = () => {
     return  (
