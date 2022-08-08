@@ -97,13 +97,13 @@ export const Button = styled.button`
 
 export const FormGroup = styled.div`
     display : flex ;
-    
+
     padding : 10px ;
     display : flex ;
     gap : 15px;
 
     &.col {
-        display : flex ;
+        align-items : center ;
     }
 
     &.row {
@@ -114,6 +114,10 @@ export const FormGroup = styled.div`
 
     & input {
         width : 100%;
+    }
+
+    @media screen and (max-width : 310px) {
+        flex-direction : column ;
     }
 `
 

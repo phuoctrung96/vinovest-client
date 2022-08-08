@@ -141,15 +141,15 @@ export const AppHeader: React.FC<AppHeaderProps> = observer(() => {
                                     }}
                                 />
                                 <SubNavLinksDiv
-                                    top={document.getElementsByClassName('_xto_')[isSticky ? 1 : 0]?.getBoundingClientRect().bottom}
-                                    left={document.getElementsByClassName('_xto_')[isSticky ? 1 : 0]?.getBoundingClientRect().left}
+                                    top={document.getElementsByClassName('_xto_')[(isSticky && document.getElementsByClassName('_xto_').length !== 1) ? 1 : 0]?.getBoundingClientRect().bottom}
+                                    left={document.getElementsByClassName('_xto_')[(isSticky && document.getElementsByClassName('_xto_').length !== 1) ? 1 : 0]?.getBoundingClientRect().left}
                                     onMouseOver={() => setOpenSubLink(true)}
                                     onMouseOut={() => setOpenSubLink(false)}
                                     isHidden={!openSubLinks}
                                 >
                                     <SubNavLinks 
-                                        top={document.getElementsByClassName('_xto_')[isSticky ? 1 : 0]?.getBoundingClientRect().bottom}
-                                        left={document.getElementsByClassName('_xto_')[isSticky ? 1 : 0]?.getBoundingClientRect().left}
+                                        top={document.getElementsByClassName('_xto_')[(isSticky && document.getElementsByClassName('_xto_').length !== 1) ? 1 : 0]?.getBoundingClientRect().bottom}
+                                        left={document.getElementsByClassName('_xto_')[(isSticky && document.getElementsByClassName('_xto_').length !== 1) ? 1 : 0]?.getBoundingClientRect().left}
                                     >
                                         {
                                             NAVIGATION_SUB_LINKS.map((item, index) => (

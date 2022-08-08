@@ -8,6 +8,7 @@ import StairPNG from "./assets/stair.png";
 
 import { useTranslation } from 'react-i18next';
 import PrePopulateModal from '../pre-populate-modal';
+import SpeakModal from '../speak-modal';
 
 const ReserveList = () => {
     const { t } = useTranslation("reserve-cask");
@@ -28,9 +29,14 @@ const ReserveList = () => {
     ]
 
     const [openPrePopulate, setOpenPrePopulate] = React.useState(true) ;
+    const [openSpeak , setOpenSpeak] = React.useState(false) ;
 
     const closePrePopulate = () => {
         setOpenPrePopulate(!openPrePopulate) ;
+    }
+
+    const closeSpeak = () => {
+        setOpenSpeak(!openSpeak) ;
     }
 
     return (
@@ -55,7 +61,13 @@ const ReserveList = () => {
                                 >
                                     {t(`reserve_cask.reserve_list.${card.key}.price`)}
                                 </ReservePrice>
-                                <ReserveBtn>
+                                <ReserveBtn
+                                    onClick={() => {
+                                        if(card.key === 'ultra_rare_scotch') {
+                                            setOpenSpeak(true) ;
+                                        }
+                                    }}
+                                >
                                     {t(`reserve_cask.reserve_list.${card.key}.btn_label`)}
                                 </ReserveBtn>
                                 <ReserveDescription
@@ -69,6 +81,9 @@ const ReserveList = () => {
                 </ReserveListWrapper>
                 <BrandDiv
                 >
+                    <BrandImageDiv >
+                        <img src={StairPNG} />
+                    </BrandImageDiv>
                     <BrandQuestion>
                         {t(`reserve_cask.reserve_list.brand.question`)}
                     </BrandQuestion>
@@ -87,6 +102,13 @@ const ReserveList = () => {
                     closeModal={closePrePopulate}
                 />
             }
+
+            {
+                openSpeak && <SpeakModal
+                    isModal={openSpeak}
+                    closeModal={closeSpeak}
+                />
+            }
         </>
     )
 }
@@ -99,12 +121,16 @@ const ReserveListDiv = styled.div`
 
     position : relative ;
     z-index : 5 ;
+
+    width : 100%
 `
 
 const ReserveListWrapper = styled.div`
     display : flex ;
     justify-content : center ;
     gap : 30px ;
+
+    flex-wrap : wrap ;
 `
 
 const ReserveCard = styled.div`
@@ -119,13 +145,18 @@ const ReserveCard = styled.div`
     padding : 20px;
     border: 2px solid #242E35;
 
-    max-width : 370px ;
+    width : 370px ;
+    min-width : 370;
 
     &.active {
         background : #191B1C;
     }
 
     cursor : pointer ;
+
+    @media screen and (max-width: 384px) {
+        width : 100%;
+    }
 `
 
 const ReserveCardTitle  = styled.div`
@@ -138,6 +169,10 @@ const ReserveCardTitle  = styled.div`
     &.active {
         color : #FAE8D1;
     }
+
+    @media screen and (max-width: 380px) {
+        font-size : 32px
+    }
 `
 
 const ReserveThumnail = styled.div`
@@ -149,7 +184,7 @@ const ReserveThumnail = styled.div`
 `
 
 const ReservePrice = styled.div`
-    font-family: 'Vinovest';
+    font-family: VinovestMedium,sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
@@ -201,18 +236,34 @@ const ReserveDescription = styled.div`
         color : #FAE8D1 ;
     }
 `
+const BrandImageDiv = styled.div`
+    display : none ;
+    @media screen and (max-width: 1110px) {
+        display : flex ;
+        justify-content : flex-end ;
+    }
+
+    
+    & img {
+        @media screen and (max-width: 590px) {
+            width : 100%;
+        }
+    }
+`
 
 const BrandDiv = styled.div`
     margin-top : 50px ;
 
     background : #3C400C;
-
-    padding : 50px;
     
     background-image: url(${StairPNG});
     background-repeat: no-repeat;
     background-position: top right;
     background-size : 300px 220px ;
+
+    @media screen and (max-width: 1110px) {
+        background-image : none ;
+    }
 `
 
 const BrandQuestion = styled.div`
@@ -222,6 +273,22 @@ const BrandQuestion = styled.div`
     font-family : RoslindaleDisplayCondensed ;
 
     width : fit-content ;
+
+    padding-top : 50px ;
+    padding-left : 50px;
+
+    @media screen and (max-width: 1110px) {
+       font-size : 32px;
+    }
+
+    @media screen and (max-width: 385px) {
+        padding-left : 10px;
+        padding-right : 10px ;
+
+        text-align : center ;
+
+        width : 100% ;
+    }
 `
 
 const BrandDescription = styled.div`
@@ -231,10 +298,26 @@ const BrandDescription = styled.div`
     font-family : RoslindaleDisplayCondensed ;
 
     width : fit-content ;
+    padding-left : 50px;
+
+    @media screen and (max-width: 1110px) {
+        font-size : 32px;
+    }
+
+    @media screen and (max-width: 385px) {
+        padding-left : 10px;
+        padding-right : 10px ;
+
+        text-align : center ;
+
+        width : 100% ;
+    }
 `
 
 const BrandButton = styled.div`
     margin-top : 40px ;
+    margin-left : 50px ;
+    margin-bottom : 50px ;
 
     cursor : pointer ;
     border : 1px solid #FAE8D1;
@@ -250,6 +333,18 @@ const BrandButton = styled.div`
     padding-bottom : 10px ;
 
     width : fit-content ;
+
+    @media screen and (max-width: 385px) {
+        padding-left : 10px;
+        padding-right : 10px ;
+
+        margin-left : 10px;
+        margin-right : 10px;
+
+        text-align : center ;
+
+        width : auto ;
+    }
 `
 
 export default ReserveList ;

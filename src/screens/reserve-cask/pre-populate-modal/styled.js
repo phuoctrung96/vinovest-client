@@ -14,11 +14,17 @@ export const ModalContainer = styled.div`
 export const ModalTitle = styled.div`
     padding : 20px ;
 
+    padding-right : 50px ;
+
     font-size : 32px;
     font-family : RoslindaleDisplayCondensed;
 
     border : 1px solid lightgray;
     background : white ;
+
+    @media screen and (max-width : 360px) {
+        font-size : 25px;
+    }
 `
 export const ModalContent = styled.div`
     padding: 20px ;
@@ -50,8 +56,15 @@ export const modalBaseStyles = `
 `;
 
 export const TableContainer = styled.div`
+    overflow-y : auto ;
+
     & table {
         width : 100%;
+
+        @media screen and (max-width: 1023px) { 
+           width : 700px
+        }
+
         & tr {
             &:first-child {
                 color : #A8ABAD ;
@@ -99,12 +112,17 @@ export const FormGroup = styled.div`
     align-items : center ;
     padding : 10px ;
     display : flex ;
+
     gap : 15px;
 
     margin-bottom : 20px;
 
     & input {
         width : 100%;
+    }
+
+    @media screen and (max-width : 310px) {
+        flex-direction : column ;
     }
 `
 

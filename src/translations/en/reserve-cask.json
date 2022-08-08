@@ -1,31 +1,9 @@
 {
     "reserve_cask": {
-        "network": {
-            "description_1": "Gain access to a rarefied circle",
-            "description_2": "Our wine network is granted access to up and coming vineyards, private sales, and limited releases for your portfolio.",
-            "description_3": "Vinovest shares details about our wine investing so you can learn more about your portfolio and your passion. Consult wine experts with any questions you have.",
-            "description_4": "Join tastings with our Master Sommeliers who host some of the world’s greatest winemakers and vineyards.",
-            "title_1": "Vinovest is more than great returns",
-            "title_2": "Exclusive access to limited vintages",
-            "title_3": "Grow your passion",
-            "title_4": "Invitation-only events"
-        },
         "outpreform": {
-            "aging": "Aging",
-            "aging_description": "Wine improves with time. The astringent compounds mellow while in storage, helping to bring out new flavors and textures in the wine.",
-            "brand": "Brand Equity",
-            "brand_description": "Screaming Eagle. Château Cheval Blanc. Domaine de la Romanée-Conti. These estates rank among the most prestigious names in wine and can command six figures for a single bottle.",
-            "description": "Several factors drive wine prices up over time. These factors make wine an ideal investment for good times and the not so good times.",
             "hero_button": "RESERVE YOUR CASK",
             "hero_description": "Own entire casks of whiskey. Limited availability.",
-            "hero_title": "Reserve Your Cask",
-            "scarcity": "Scarcity",
-            "scarcity_description": "Wineries often make investment-grade wines in limited quantities — a few hundred bottles or so. That number will only fall with time as people drink them.",
-            "title": "Wine Performance Explained",
-            "title_1": "Wine Outperformed the Global Equity Index by",
-            "title_2": "1.88%",
-            "title_3": "annually over the last",
-            "title_4": "15 years."
+            "hero_title": "Reserve Your Cask"
         },
         "benefits": {
             "description": "Grow your passion and returns",
@@ -42,18 +20,6 @@
             "header_5": "Tax Advantages",
             "header_6": "Diversified Portfolio",
             "title": "Whiskeyvest Exclusive Benefits"
-        },
-        "offerings" : {
-            "top_description": "offerings include"
-        },
-        "steady_yields": {
-            "description": "Fine wine has outperformed the Global Equity Index for the past 15 years, including during downturns.",
-            "graph_text": "Wine",
-            "global_index": "Global Equity Index",
-            "gei": "gei",
-            "label_wine": "Wine",
-            "title": "Steady yields",
-            "top_description": "performance you can see ... and taste"
         },
         "reserve_list" : {
             "american" : {
@@ -75,7 +41,7 @@
                 "description" : "A select ultra-premium cask of Scotch from well-known producers such as Highland Park, Macallan, Ardmore, and many more."
             },
             "brand" : {
-                "question" : "Not sure which casks to get?",
+                "question" : "Feeling stuck?",
                 "description" : "Let our team of experts help you decide",
                 "btn_label" : "LET VINOVEST DECIDE"
             }

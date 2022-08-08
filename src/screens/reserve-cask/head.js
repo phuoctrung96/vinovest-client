@@ -30,7 +30,11 @@ const HeadContainer = styled.div`
     text-align: center;
     position : relative ;
     z-index : 3 ;
-    
+
+    display : flex ;
+    flex-direction : column ;
+    align-items : center;
+
     &:before {
         content: " ";
         display: block;
@@ -65,22 +69,37 @@ const HeadContainer = styled.div`
         }
     }
 
-    @media screen and (max-width: 991px) {
-        height: 716px;
+    @media screen and (max-width: 995px) {
+        height: 2295px;
         padding-right: 6.666%;
         padding-left: 6.666%;
         padding-top: 120px;
     }
 
-    @media screen and (max-width: 767px) {
-        height: auto;
-        background-size: 220%;
-        background-position: bottom left 12%;
 
-        .gup {
-            display: block;
-            height: 92vw;
-        }
+    @media screen and (max-width: 911px) {
+        height: 2850px;
+    }
+
+    @media screen and (max-width: 909px) {
+        height: 3050px;
+    }
+
+    @media screen and (max-width: 909px) {
+        height: 3150px;
+    }
+
+    @media screen and (max-width: 440px) {
+        padding-left : 0px;
+        padding-right : 0px;
+    }
+
+    @media screen and (max-width: 444px) {
+        height : 3050px;
+    }
+
+    @media screen and (max-width: 283px) {
+        height : 3450px;
     }
 `;
 
