@@ -19,6 +19,7 @@ import MobileRightMenu from "./components/MobileRightMenu";
 import { NavLink, LinkHtml, SubNavLinks, SubNavLinksDiv } from "#shared/ui";
 import { NAVIGATION_SUB_LINKS } from "./NavLinksData";
 import styled from 'styled-components' ;
+import arrowRight from "./assets/arrow-right.svg";
 
 interface AppHeaderProps {
     hideForLogin: boolean;
@@ -159,12 +160,17 @@ export const AppHeader: React.FC<AppHeaderProps> = observer(() => {
                                                         navigate.push(item.to) ;
                                                     }}
                                                 >
-                                                    <LinkLabelDiv>
-                                                        {item.label}
-                                                    </LinkLabelDiv>
-                                                    <LinkDescriptionDiv>
-                                                        {sub_link_descriptions[index]}
-                                                    </LinkDescriptionDiv>
+                                                    <div>
+                                                        <LinkLabelDiv>
+                                                            {item.label}
+                                                        </LinkLabelDiv>
+                                                        <LinkDescriptionDiv>
+                                                            {sub_link_descriptions[index]}
+                                                        </LinkDescriptionDiv>
+                                                    </div>
+                                                    <div>
+                                                        <img src={arrowRight} />
+                                                    </div>
                                                 </LinkItemDiv>
                                             ))
                                         }
@@ -180,16 +186,22 @@ export const AppHeader: React.FC<AppHeaderProps> = observer(() => {
 });
 
 const LinkItemDiv = styled.div`
-    padding-top : 10px ;
-    padding-bottom : 10px ;
+    padding-top : 15px ;
+    padding-bottom : 15px ;
+    padding-left : 5px;
+    padding-right : 5px;
     cursor : pointer ;
     border-bottom : 1px solid #EEEEEE;
+
+    display : flex ;
+    justify-content : space-between;
+    align-items : center;
 `
 
 const LinkDescriptionDiv = styled.div`
     font-family : VinovestMedium ;
     font-size : 12px; 
-    color : lightgray ;
+    color : gray ;
     padding-top : 3px;
 `
 const LinkLabelDiv = styled.div`
