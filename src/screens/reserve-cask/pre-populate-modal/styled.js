@@ -3,17 +3,18 @@ import styled from "styled-components";
 export const ModalContainer = styled.div`
     width: 904px;
     margin: 0 auto;
-    border-radius: 0px;
+    border-radius: 10px;
     background : white ;
 
     @media screen and (max-width: 1023px) {
         width: 100%;
     }
+    
 `;
 
 export const ModalTitle = styled.div`
     padding : 20px ;
-
+    border-radius: 10px 10px 0px 0px; 
     padding-right : 50px ;
 
     font-size : 32px;
@@ -35,7 +36,7 @@ export const ModalFooter = styled.div`
 
 export const modalBaseStyles = `
     background: transparent;
-    border-radius: 0px;
+    border-radius: 10px;
     box-shadow: none;
 
     .closeIcon {
@@ -64,12 +65,20 @@ export const TableContainer = styled.div`
         @media screen and (max-width: 1023px) { 
            width : 700px
         }
+        @media only screen and (max-width: 600px) {
+            width: 500px;
+           }
+        & thead {
+            & tr {
+                color : #A8ABAD ;
+
+                & td {
+                    padding : 20px;
+                }
+            }
+        }
 
         & tr {
-            &:first-child {
-                color : #A8ABAD ;
-            }
-
             & td {
                 padding : 20px;
             }
@@ -83,6 +92,10 @@ export const Input = styled.input`
     border-radius: 3px;
     outline : none ;
     padding : 10px ;
+
+    @media only screen and (max-width: 600px) {
+        width: 150px;
+    }
 `
 
 export const Button = styled.button`
@@ -131,4 +144,12 @@ export const Label = styled.label`
     font-size : 20px;
 
     min-width : 150px;
+`
+
+export const DisableDiv = styled.tr`
+    color : #A8ABAD ;
+
+    & td {
+        padding : 20px;
+    }
 `

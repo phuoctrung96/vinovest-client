@@ -86,7 +86,7 @@ const StyledModal = styled.div`
         z-index: 1050;
         background-color: #fefefe;
         box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
-        border-radius: 4px;
+        border-radius: 10px;
         ${(p) => p.additionalStyles}
     }
     .background {

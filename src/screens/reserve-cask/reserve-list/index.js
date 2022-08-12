@@ -1,42 +1,58 @@
-import * as React from 'react' ;
+import * as React from 'react';
 import styled from 'styled-components';
 
-import AmericanPNG from '#assets/reserve-cask/american.png' ;
-import NewAgeScotchPNG from '#assets/reserve-cask/new_age_scotch.png' ;
-import UltraRareScotchPNG from '#assets/reserve-cask/ultra_rare_scotch.png' ;
+import AmericanPNG from '#assets/reserve-cask/american.png';
+import NewAgeScotchPNG from '#assets/reserve-cask/new_age_scotch.png';
+import UltraRareScotchPNG from '#assets/reserve-cask/ultra_rare_scotch.png';
 import StairPNG from "#assets/reserve-cask/stair.png";
 
 import { useTranslation } from 'react-i18next';
 import PrePopulateModal from '../pre-populate-modal';
 import SpeakModal from '../speak-modal';
+import InvestModal from '../invest-modal';
+import { PopupModal } from "react-calendly";
 
 const ReserveList = () => {
     const { t } = useTranslation("reserve-cask");
 
     const cardList = [
         {
-            key : 'american' ,
-            img : AmericanPNG
+            key: 'american',
+            img: AmericanPNG
         },
         {
-            key : 'new_age_scotch',
-            img : NewAgeScotchPNG
+            key: 'new_age_scotch',
+            img: NewAgeScotchPNG
         },
         {
-            key : 'ultra_rare_scotch',
-            img : UltraRareScotchPNG
+            key: 'ultra_rare_scotch',
+            img: UltraRareScotchPNG
         }
     ]
 
-    const [openPrePopulate, setOpenPrePopulate] = React.useState(true) ;
-    const [openSpeak , setOpenSpeak] = React.useState(false) ;
+    const [openPrePopulate, setOpenPrePopulate] = React.useState(false);
+    const [openSpeak, setOpenSpeak] = React.useState(false);
+    const [openInvest, setOpenInvest] = React.useState(false);
+    const [openCalender, setOpenOpenCalender] = React.useState(false);
 
-    const closePrePopulate = () => {
-        setOpenPrePopulate(!openPrePopulate) ;
+    const closeInvest = (flag) => {
+
+        setOpenInvest(!openInvest);
+        if (flag) {
+            setOpenOpenCalender(true);
+        }
+    }
+
+    const closePrePopulate = (flag) => {
+
+        setOpenPrePopulate(!openPrePopulate);
+        if (flag) {
+            setOpenOpenCalender(true);
+        }
     }
 
     const closeSpeak = () => {
-        setOpenSpeak(!openSpeak) ;
+        setOpenSpeak(!openSpeak);
     }
 
     return (
@@ -63,8 +79,10 @@ const ReserveList = () => {
                                 </ReservePrice>
                                 <ReserveBtn
                                     onClick={() => {
-                                        if(card.key === 'ultra_rare_scotch') {
-                                            setOpenSpeak(true) ;
+                                        if (card.key === 'ultra_rare_scotch') {
+                                            setOpenOpenCalender(true);
+                                        } else {
+                                            setOpenPrePopulate(true);
                                         }
                                     }}
                                 >
@@ -90,12 +108,23 @@ const ReserveList = () => {
                     <BrandDescription>
                         {t(`reserve_cask.reserve_list.brand.description`)}
                     </BrandDescription>
-                    <BrandButton>
+                    <BrandButton onClick={() => {
+                        setOpenInvest(true);
+                    }}>
                         {t(`reserve_cask.reserve_list.brand.btn_label`)}
                     </BrandButton>
                 </BrandDiv>
             </ReserveListDiv>
-
+            <PopupModal
+                url="https://calendly.com/vinovestofficial/ask-about-whiskeyvest"
+                onModalClose={() => setOpenOpenCalender(false)}
+                open={openCalender}
+                /*
+                 * react-calendly uses React's Portal feature (https://reactjs.org/docs/portals.html) to render the popup modal. As a result, you'll need to
+                 * specify the rootElement property to ensure that the modal is inserted into the correct domNode.
+                 */
+                rootElement={document.getElementById("root")}
+            />
             {
                 openPrePopulate && <PrePopulateModal
                     isModal={openPrePopulate}
@@ -107,6 +136,13 @@ const ReserveList = () => {
                 openSpeak && <SpeakModal
                     isModal={openSpeak}
                     closeModal={closeSpeak}
+                />
+            }
+
+            {
+                openInvest && <InvestModal
+                    isModal={openInvest}
+                    closeModal={closeInvest}
                 />
             }
         </>
@@ -159,7 +195,7 @@ const ReserveCard = styled.div`
     }
 `
 
-const ReserveCardTitle  = styled.div`
+const ReserveCardTitle = styled.div`
     padding-top : 20px ;
     font-size : 48px ;
     font-family: Roslindaledisplaycondensed,sans-serif;
@@ -347,4 +383,4 @@ const BrandButton = styled.div`
     }
 `
 
-export default ReserveList ;
+export default ReserveList;

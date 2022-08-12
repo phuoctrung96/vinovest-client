@@ -21,52 +21,63 @@
             "header_6": "Diversified Portfolio",
             "title": "Whiskeyvest Exclusive Benefits"
         },
-        "reserve_list" : {
-            "american" : {
-                "name" : "American",
-                "price" : "$1,200",
-                "btn_label" : "Reserve",
-                "description" : "An assortment of high-end new fill American whiskey. Mainly single grain casks of corn, rye, wheat, and barley. To be utilized by well-known American craft whiskey brands such as Whistle Pig, Breckenridge Distillery, and High West Distillery."
+        "reserve_list": {
+            "american": {
+                "name": "American",
+                "price": "$1,200",
+                "btn_label": "Reserve",
+                "description": "An assortment of high-end new fill American whiskey. Mainly single grain casks of corn, rye, wheat, and barley. To be utilized by well-known American craft whiskey brands such as Whistle Pig, Breckenridge Distillery, and High West Distillery."
             },
-            "new_age_scotch" : {
-                "name" : "New Age Scotch",
-                "price" : "$4,000 - $ 6,0000",
-                "btn_label" : "Reserve",
-                "description" : "New fill casks from the Holyrood Distillery, the first distillery in Edinburgh, Scotland in a 100 years. Two options available: heavily peated and rauch malt."
+            "new_age_scotch": {
+                "name": "New Age Scotch",
+                "price": "$4,000 - $ 6,0000",
+                "btn_label": "Reserve",
+                "description": "New fill casks from the Holyrood Distillery, the first distillery in Edinburgh, Scotland in a 100 years. Two options available: heavily peated and rauch malt."
             },
-            "ultra_rare_scotch" : {
-                "name" : "Ultra-Rare Scotch",
-                "price" : "Starting at $15,000",
-                "btn_label" : "Speak with an expert",
-                "description" : "A select ultra-premium cask of Scotch from well-known producers such as Highland Park, Macallan, Ardmore, and many more."
+            "ultra_rare_scotch": {
+                "name": "Ultra-Rare Scotch",
+                "price": "Starting at $15,000",
+                "btn_label": "Speak with an expert",
+                "description": "A select ultra-premium cask of Scotch from well-known producers such as Highland Park, Macallan, Ardmore, and many more."
             },
-            "brand" : {
-                "question" : "Feeling stuck?",
-                "description" : "Let our team of experts help you decide",
-                "btn_label" : "LET VINOVEST DECIDE"
+            "brand": {
+                "question": "Feeling stuck?",
+                "description": "Let our team of experts help you decide",
+                "btn_label": "LET VINOVEST DECIDE"
             }
         }
     },
-    "reserve_modals" : {
-        "whiskey_reservation" : {
-            "title" : "Whiskey Reservation"
+    "reserve_modals": {
+        "whiskey_list": {
+            "american": {
+                "name": "American Whiskey"
+            },
+            "new_age_scotch_light": {
+                "name": "New Age Scotch (Lightly Peated)"
+            },
+            "new_age_scotch_heavy": {
+                "name": "New Age Scotch (Heavily Peated)"
+            }
         },
-        "checkout" : {
-            "title" : "Whiskey Reservation"
+        "whiskey_reservation": {
+            "title": "Whiskey Reservation"
         },
-        "how_much" : {
-            "title" : "How much are you looking to invest in whiskey?"
+        "checkout": {
+            "title": "Whiskey Reservation"
         },
-        "verification" : {
-            "title" : "Reservation Verification"
+        "how_much": {
+            "title": "How much are you looking to invest in whiskey?"
         },
-        "success" : {
-            "title" : "Success!",
-            "description" : "Our team will be in touch shortly"
+        "verification": {
+            "title": "Reservation Verification"
         },
-        "congrats" : {
-            "title" : "Congrats!",
-            "description" : "Your qualify to become one of our VIP investors, To skip the line, please schedule a call directly with our team."
+        "success": {
+            "title": "Success!",
+            "description": "Our team will be in touch shortly"
+        },
+        "congrats": {
+            "title": "Congrats!",
+            "description": "Your qualify to become one of our VIP investors, To skip the line, please schedule a call directly with our team."
         }
     },
     "quality": {
@@ -90,7 +101,7 @@
         "title": "Diversify your portfolio around your passion",
         "topSmallTitle": "GROW YOUR PASSION AND RETURNS"
     },
-    "add_fine" : {
-        "title" : "Add fine whiskey casks to your portfolio"
+    "add_fine": {
+        "title": "Add fine whiskey casks to your portfolio"
     }
 }

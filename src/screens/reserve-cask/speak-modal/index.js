@@ -3,11 +3,11 @@ import { ModalBase } from "#shared/components/ModalBase";
 
 import { useTranslation } from "react-i18next";
 
-import "@amir04lm26/react-modern-calendar-date-picker/lib/DatePicker.css";
-import { Calendar } from "@amir04lm26/react-modern-calendar-date-picker";
-import arrowLeft from '#assets/shared/arrow-left.svg' ;
 
-import { 
+// import { Calendar } from "@amir04lm26/react-modern-calendar-date-picker";
+import arrowLeft from '#assets/shared/arrow-left.svg';
+
+import {
     ModalContainer,
     ModalContent,
     modalBaseStyles,
@@ -21,7 +21,7 @@ import {
     ModalFooter,
     MarkDiv,
     ArrowBackDiv
-} from './styled' ;
+} from './styled';
 
 const SpeakModal = ({ closeModal }) => {
 
@@ -32,7 +32,7 @@ const SpeakModal = ({ closeModal }) => {
         month: 3,
         day: 4,
     };
-    
+
     const defaultTo = {
         year: 2019,
         month: 3,
@@ -47,19 +47,19 @@ const SpeakModal = ({ closeModal }) => {
     const [selectedDayRange, setSelectedDayRange] = React.useState(
         defaultRange
     );
-    
+
     return (
         <>
             <ModalBase isOpen onClose={closeModal} borderRadius={20} additionalStyles={modalBaseStyles}>
                 <ModalContainer>
                     <ModalContent>
                         <MarkDiv>
-                            <span style={{fontSize : '8px'}}>POWERED BY</span><br/>
+                            <span style={{ fontSize: '8px' }}>POWERED BY</span><br />
                             Calendly
                         </MarkDiv>
                         <Grid >
                             <GridItem>
-                                <div style={{display:'flex', flexDirection:'column', justifyContent:'flex-end', height: '100%'}}>
+                                <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', height: '100%' }}>
                                     <DescriptionDiv>
                                         <ArrowBackDiv>
                                             <img src={arrowLeft} />
@@ -87,7 +87,7 @@ const SpeakModal = ({ closeModal }) => {
                             </GridItem>
                             <GridItem>
                                 <BoldDiv
-                                    style={{marginBottom : '20px'}}
+                                    style={{ marginBottom: '20px' }}
                                 >
                                     Select a Date &amp; Time
                                 </BoldDiv>

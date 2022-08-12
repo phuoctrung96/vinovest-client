@@ -4,3 +4,4 @@ export const uppercaseWordsInString = (str: string): string => {
 };
 
 export const capitalizeWord = (str: string = ""): string => str.charAt(0).toUpperCase() + str.slice(1);
+

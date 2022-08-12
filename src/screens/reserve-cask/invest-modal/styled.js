@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const ModalContainer = styled.div`
     width: 904px;
     margin: 0 auto;
-    border-radius: 0px;
+    border-radius: 10px;
     background : white ;
 
     @media screen and (max-width: 1023px) {
@@ -13,7 +13,7 @@ export const ModalContainer = styled.div`
 
 export const ModalTitle = styled.div`
     padding : 20px ;
-
+    border-radius: 10px 10px 0px 0px; 
     font-size : 32px;
     font-family : RoslindaleDisplayCondensed;
 
@@ -65,6 +65,20 @@ export const TableContainer = styled.div`
 
     margin-bottom : 50px;
 `
+export const InputBox = styled.div`
+    display: flex;
+    align-items: center;
+    border: 1px solid #EEEEEE;
+    border-radius: 3px;
+    padding-left: 20px;
+`
+export const AmountInput = styled.input`
+    border: none;
+    outline : none ;
+    padding : 20px ;
+    padding-left: 5px;
+`
+
 export const Input = styled.input`
     border: 1px solid #EEEEEE;
     border-radius: 3px;
@@ -76,7 +90,7 @@ export const Button = styled.button`
     width: 100%;
     height: 65px;
 
-    background: ${(props) => (props.color === 'transparent' ? "none" : "#51AC55")};
+    background: ${(props) => (props.color === 'transparent' ? "#A8ABAD" : "#51AC55")};
     border-radius: 10px; 
     border : none ;
     cursor : pointer ;
@@ -127,3 +141,4 @@ export const Label = styled.label`
 
     min-width : 150px;
 `
+
