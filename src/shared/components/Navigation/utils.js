@@ -9,10 +9,10 @@ export const chooseClassName = ({ authenticated, isMobile, pathname, isSticky })
         if (!isSticky && !isMobile) logoType = "light";
     }
 
-    if (["/home"].includes(pathname)) {
-        classNameHeader = isMobile ? "light" : "transparent";
-        if (!isSticky && !isMobile) logoType = "light";
-    }
+    // if (!authenticated && ["/whiskeyvest"].includes(pathname)) {
+    //     classNameHeader = isMobile ? "light" : "transparent";
+    //     if (!isSticky && !isMobile) logoType = "light";
+    // }
 
     if (["/about-us"].includes(pathname)) {
         classNameHeader = "light";
@@ -27,7 +27,7 @@ export const chooseClassName = ({ authenticated, isMobile, pathname, isSticky })
         logoType = "green";
     }
 
-    if (["/vinovest-100-index", "/why-wine", "/advisors", "/wine-futures"].includes(pathname)) {
+    if (["/vinovest-100-index", "/why-wine", "/advisors", "/wine-futures", "/whiskeyvest", "/reserve-cask"].includes(pathname)) {
         classNameHeader = "darkBlue";
         logoType = "light";
     }

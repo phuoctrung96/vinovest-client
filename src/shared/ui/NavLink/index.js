@@ -24,6 +24,12 @@ export const StyledNavLink = styled(I18nNavLink).attrs({ activeClassName })`
     padding-left: ${(p) => (p.isTrading ? "26px" : "0")};
     border-left: ${(p) => (p.isTrading ? "1px solid #242E35" : "0")};
 
+    &.login {
+        &:after {
+            width : 50% !important ;
+        }
+    }
+
     &.${activeClassName} {
         color: ${(p) => (p.authenticated ? "#a86d37" : "#242e35")};
 
@@ -37,6 +43,8 @@ export const StyledNavLink = styled(I18nNavLink).attrs({ activeClassName })`
             width: 26px;
             border-bottom: 2px solid ${({ theme }) => theme.colors.mainAccentBlue};
             padding-bottom: 5px;
+
+            width : 100%;
         }
         &.transparent {
             &:after {
@@ -65,6 +73,7 @@ export const StyledNavLink = styled(I18nNavLink).attrs({ activeClassName })`
         &.darkBlue {
             &:after {
                 border-bottom: 2px solid #efddc7;
+                width : 100%;
             }
         }
     }
@@ -73,3 +82,40 @@ export const StyledNavLink = styled(I18nNavLink).attrs({ activeClassName })`
 export const LinkHtml = styled.a`
     ${styles};
 `;
+
+export const SubNavLinks = styled.div`
+    width : 300px ;
+
+    background : white ;
+
+    position : relative ;
+
+    border-radius : 10px;
+    padding : 10px;
+
+    &:after {
+        position : absolute ;
+        height : 20px;
+        width : 20px ;
+
+        content : " " ;
+        
+        top : -10px;
+        left : 25px;
+        transform : rotate(45deg) ;
+
+        background : white ;
+
+    }
+`
+export const SubNavLinksDiv = styled.div`
+    padding-top : 50px ;
+
+    z-index : 15;
+
+    display : ${props => props.isHidden ? "none" : 'block'} ;
+
+    top : ${props => props.top}px ;
+    left : ${props => props.left - 30}px ;
+    position : fixed ;
+`

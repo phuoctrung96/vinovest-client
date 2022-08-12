@@ -60,7 +60,7 @@ const config: IAppConfig = {
         state: "WM6D",
         nonce: "YsG76j5",
     },
-    apiEndpoint: "https://api.staging.vinovest.co",
+    apiEndpoint: "https://api-staging-managed.vinovest.co",
     authServerID: null,
     calendly: {
         url: "https://calendly.com/vinovest/30min",

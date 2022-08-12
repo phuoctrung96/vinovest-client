@@ -366,8 +366,8 @@ export class TransportManager {
             }),
         });
 
-    getPendingTransfers = async (jwt, userID, currencyCode) => {
-        const response = await fetch(`${this.config.apiEndpoint}/v1/transfers/${userID}/pending`, {
+    getPendingTransfers = async (jwt, userID, portfolioID, currencyCode) => {
+        const response = await fetch(`${this.config.apiEndpoint}/v1/payment/${userID}/portfolio/${portfolioID}/charges`, {
             method: "GET",
             headers: new Headers({
                 Authorization: `Bearer ${jwt}`,

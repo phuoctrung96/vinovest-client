@@ -11,14 +11,20 @@ const QualityValueList = ({ valueProps }) => {
     return (
         <CustomModuleContainer ref={ref} isRow>
             {valueProps.map((p, i) => (
-                <Prop key={p.header} {...p} index={i} hasRevealed={hasRevealed} />
+                <Prop key={i} {...p} index={i} hasRevealed={hasRevealed} />
             ))}
         </CustomModuleContainer>
     );
 };
 
-const Prop = ({ header, description, svg, index, hasRevealed, imgClassName }) => (
-    <PropContainer index={index + 1} className={hasRevealed ? "runAnimations" : ""}>
+const Prop = ({ header, description, svg, index, hasRevealed, imgClassName, clickEvent }) => (
+    <PropContainer index={index + 1} className={hasRevealed ? "runAnimations" : ""}
+        onClick={() => {
+            if(clickEvent) {
+                clickEvent() ;
+            }
+        }}
+    >
         <img className={`prop-img ${imgClassName}`} src={svg} alt="prop-img" />
         <span className="prop-header">{header}</span>
         <span className="prop-desc">{description}</span>
@@ -70,7 +76,6 @@ const CustomModuleContainer = styled.div`
     max-width: 1200px;
     width: 100%;
     flex-direction: column;
-
     ${(p) => p.theme.media.greaterThan("991px")`
         flex-direction: row;
         flex-wrap: wrap;
@@ -86,6 +91,10 @@ const PropContainer = styled.div`
     width: 100%;
     padding: 12px;
 
+    margin-bottom : 30px ;
+
+    cursor : pointer ;
+    
     &.runAnimations {
         animation: ${FadeFromBottomWithDelay} ${({ index }) => 0.5 * index}s ease-out;
     }

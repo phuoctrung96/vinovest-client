@@ -23,7 +23,6 @@ const TestimonialsSlider = () => {
                 <TopSmallTitle className={runAnimation}>{t("partners-are-saying.topSmallTitle")}</TopSmallTitle>
                 <TopTitle className={runAnimation}>{t("partners-are-saying.title")}</TopTitle>
             </TitleWrapper>
-
             <SlickWrapper className={runAnimation}>
                 <div className="container">
                     <Slider

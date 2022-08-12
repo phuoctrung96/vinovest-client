@@ -1,4 +1,5 @@
 {
+    "welcome": "Welcome",
     "about": "About",
     "account": "Account",
     "blog": "Blog",
@@ -49,6 +50,8 @@
     "get-started-home": "Get started",
     "help": "FAQ",
     "how-it-works": "HOW IT WORKS",
+    "whiskey-vest" : "WHISKEYVEST",
+    "marketPlace" : "MarketPlace",
     "invite": "Invite",
     "managed-cash": "Managed cash:",
     "minimum_investment_amount": "1000",
@@ -113,5 +116,8 @@
     "zh_CN_currency_value": "Hong Kong Dollars",
     "zh_Hans_HK_currency": "HKD",
     "zh_Hans_HK_currency_value": "HK$ Hong Kong Dollars (HKD)",
-    "wine": "Wine Directory"
+    "wine": "Wine Directory",
+    "managed": "Managed",
+    "trading": "Trading",
+    "community": "Community"
 }

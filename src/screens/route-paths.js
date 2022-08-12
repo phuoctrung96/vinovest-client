@@ -1,6 +1,6 @@
 export const ROUTE_PATHS = {
     home: "/",
-    managedPortfolio: "/managed",
+    managedPortfolio: "/managed/overview",
     cellar: "/managed/portfolio",
     account: "/account",
     invite: "/invite",
@@ -16,6 +16,9 @@ export const ROUTE_PATHS = {
 
     whyWine: "/why-wine",
     aboutUs: "/about-us",
+    marketPlace : "/marketPlace",
+    whiskeyVest : "/whiskeyvest",
+    reserverCask : "/reserve-cask",
     council: "/advisory-council",
     advisors: "/advisors",
     contactUs: "/contact-us",
@@ -36,7 +39,7 @@ export const ROUTE_PATHS = {
     helpCategory: "/help-category",
     blog: "/blog",
     accessibility: "/accessibility",
-    trading: "/trading",
+    trading: "/trade/marketplace",
     collections: "/trade/collections",
     community: "/community",
 };

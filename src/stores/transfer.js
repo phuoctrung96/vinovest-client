@@ -104,7 +104,8 @@ export class TransferStore {
         const userID = this.root.user.oktaUserInfo.sub;
         const { accessToken } = this.root.auth;
 
-        const { ok, data } = yield this.api.getPendingTransfers(accessToken, userID, currencyCode);
+        // TODO: need to pass the portfolioID
+        const { ok, data } = yield this.api.getPendingTransfers(accessToken, userID,userID, currencyCode);
         if (!ok) {
             this.pendingTransferEntity.status = erroredFetch(data);
             return;

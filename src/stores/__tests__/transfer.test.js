@@ -50,7 +50,7 @@ describe("Transfer Store", () => {
             expect(getStatus(store.pendingTransferEntity).isInvalidated).toBe(true);
             await store.fetchPendingTransfers("USD");
 
-            expect(api.getPendingTransfers).toHaveBeenCalledWith("vv-jwt", "vvUserId", "USD");
+            expect(api.getPendingTransfers).toHaveBeenCalledWith("vv-jwt", "vvUserId", "vvUserId", "USD");
             expect(getStatus(store.pendingTransferEntity).isDone()).toBe(true);
             expect(getStatus(store.pendingTransferEntity).isFailed()).toBe(false);
             expect(getData(store.pendingTransferEntity)).toEqual(transfers);

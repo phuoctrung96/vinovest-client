@@ -33,7 +33,6 @@ export const StyledNavWrapper = styled.div`
     @media print {
         display: none;
     }
-    
 `;
 
 export const FixedNavWrapper = styled.nav`
@@ -153,8 +152,9 @@ export const LinksRow = styled.div`
         align-items: center;
         width: 100%;
         position: relative;
-        max-width: ${() => (p.authenticated ? "442px" : "100%")};
-        margin: ${() => (p.authenticated ? "0 auto" : "0")};
+        max-width: 100%;
+        margin: 0;
+        justify-content: ${() => (p.authenticated ? "flex-end" : "flex-start")};
   `}
     ${StyledNavLink} {
         text-transform: ${(p) => (p.authenticated ? "capitalize" : "uppercase")};
@@ -176,6 +176,12 @@ export const AccountSection = styled.div`
         line-height: 18px;
         font-size: 14px;
         white-space: nowrap;
+    }
+
+    ${DepositButton}.deposit-btn {
+        background-color: #51ac55;
+        margin-right: 40px;
+        text-transform: capitalize;
     }
 
     ${StyledNavLink}.login {
@@ -258,7 +264,6 @@ export const NavUpdates = styled(Updates)`
 `;
 
 export const NavAnimationWrapper = styled.div`
-    overflow: hidden;
     position: relative;
 
     &.sticky {
@@ -381,11 +386,17 @@ export const Beta = styled.span`
     font-size: 8px;
     line-height: 1;
     top: ${(p) => (p.isMobile ? "10px" : "-20px")};
-    left: ${(p) => (p.isMobile ? "70px" : "60px")};
-    background: #51ac55;
+    left: ${(p) => (p.isMobile ? "120px" : "90px")};
+    background: #4589cf;
     padding: 4px 4px;
     text-transform: uppercase;
     border-radius: 2px;
     border-bottom-left-radius: 0;
     color: #ffffff;
+`;
+
+export const WelcomeText = styled.div`
+    span {
+        margin-left: 8px;
+    }
 `;

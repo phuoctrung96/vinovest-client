@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const DepositButton = styled.button`
     font-family: VinovestMono;
-    text-transform: uppercase;
     background-color: ${(p) => p.theme.colors.burntOrange};
     font-size: ${(p) => p.theme.typography.size.md}px;
     line-height: 18px;

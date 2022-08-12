@@ -8,13 +8,13 @@ const WithLayersButton = ({
     onClick,
     disabled,
     width,
-    colors = ["rgb(239, 221, 199)", "rgb(36, 46, 53)"],
+    colors = ["rgb(239, 221, 199)", "#3C400C"],
 }) => {
     const [first, second, optional] = colors;
     const routeToSignup = useCreateRoutingCallback("/signup", { refresh: true });
     return (
         <WithLayers
-            onClick={onClick || routeToSignup}
+            onClick={onClick}
             second={second}
             first={first}
             disabled={disabled}

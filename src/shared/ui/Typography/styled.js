@@ -19,6 +19,8 @@ export const TopTitle = styled.h2`
     margin: 0;
     color: #242e35;
 
+    max-width : 700px ;
+
     @media screen and (max-width: 767px) {
         font-size: 48px;
     }

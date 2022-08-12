@@ -25,6 +25,7 @@ import enNotFound from './en/not-found.json';
 import enOverview from './en/overview.json';
 import enPortfolio from './en/portfolio.json';
 import enPricing from './en/pricing.json';
+import enReserveCask from './en/reserve-cask.json';
 import enRiskTolerance from './en/risk-tolerance.json';
 import enSignUpModal from './en/sign-up-modal.json';
 import enSupport from './en/support.json';
@@ -35,6 +36,7 @@ import enTrading from './en/trading.json';
 import enTransactions from './en/transactions.json';
 import enVinovestHome from './en/vinovest-home.json';
 import enVinovestHundredIndex from './en/vinovest-hundred-index.json';
+import enWhiskeyVest from './en/whiskey-vest.json';
 import enWhyWine from './en/why-wine.json';
 import zh_CN404 from './zh_CN/404.json';
 import zh_CNAboutUs from './zh_CN/about-us.json';
@@ -139,6 +141,7 @@ export default {
     "overview": enOverview,
     "portfolio": enPortfolio,
     "pricing": enPricing,
+    "reserve-cask": enReserveCask,
     "risk-tolerance": enRiskTolerance,
     "sign-up-modal": enSignUpModal,
     "support": enSupport,
@@ -149,6 +152,7 @@ export default {
     "transactions": enTransactions,
     "vinovest-home": enVinovestHome,
     "vinovest-hundred-index": enVinovestHundredIndex,
+    "whiskey-vest": enWhiskeyVest,
     "why-wine": enWhyWine
   },
   "zh_CN": {

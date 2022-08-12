@@ -25,6 +25,7 @@ const DesktopNavWrapper = ({
     authenticated,
     pagesWithAnimation,
     isNewUserABTest,
+    setOpenSubLink
 }) => {
     if (!pagesWithAnimation) {
         return (
@@ -38,6 +39,7 @@ const DesktopNavWrapper = ({
                     height,
                     isAddFunds,
                     isNewUserABTest,
+                    setOpenSubLink
                 }}
             />
         );
@@ -56,6 +58,7 @@ const DesktopNavWrapper = ({
                         height,
                         isAddFunds,
                         isNewUserABTest,
+                        setOpenSubLink
                     }}
                 />
             </NavAnimationContainer>
@@ -71,6 +74,7 @@ const DesktopNavWrapper = ({
                         height,
                         isAddFunds,
                         isNewUserABTest,
+                        setOpenSubLink
                     }}
                 />
             </NavAnimationContainer>
@@ -86,6 +90,7 @@ const NavBar = ({
     height,
     isAddFunds,
     isNewUserABTest,
+    setOpenSubLink
 }) => (
     <StyledNav authenticated={authenticated ? 1 : 0} isSticky={isSticky} height={height} className={`${classNameHeader} ${isAddFunds ? "withBorder" : ""}`}>
         <FirstNavSection>
@@ -96,7 +101,7 @@ const NavBar = ({
             </NavLogo>
         </FirstNavSection>
         {!isAddFunds && !isNewUserABTest && (
-            <DesktopNavBar authenticated={authenticated} linkClassName={classNameHeader} isSticky={isSticky} />
+            <DesktopNavBar authenticated={authenticated} linkClassName={classNameHeader} isSticky={isSticky} setOpenSubLink={setOpenSubLink}/>
         )}
         {isNewUserABTest && <NavBarOnboarding />}
     </StyledNav>
