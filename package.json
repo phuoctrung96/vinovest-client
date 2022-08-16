@@ -134,7 +134,7 @@
         "@emotion/jest": "^11.3.0",
         "@sentry/webpack-plugin": "^1.17.1",
         "@svgr/webpack": "4.3.3",
-        "@testing-library/jest-dom": "^5.11.5",
+        "@testing-library/jest-dom": "^5.16.5",
         "@testing-library/react": "^11.1.0",
         "@types/jest": "^26.0.23",
         "@types/react": "^17.0.18",
