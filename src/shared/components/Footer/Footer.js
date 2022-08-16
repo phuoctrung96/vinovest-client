@@ -26,10 +26,10 @@ const Footer = ({ embed }) => {
         return null;
     }
 
-    const advisors = window.location.pathname.includes("advisors");
+    const whiskeyvest = window.location.pathname.includes("/whiskeyvest");
 
     return (
-        <div>
+        <div className={`${whiskeyvest ? "bg-tan" : ""}`}>
             {!authenticated && !isTradingPage && <WineInvestingBanner />}
             <FooterContainer embed={embed} withbanner={authenticated || isTradingPage ? 0 : 1}>
                 <GridContainer>

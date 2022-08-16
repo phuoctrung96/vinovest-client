@@ -67,7 +67,10 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    background-color: #EFDDC7;
+}
+
+#page-wrap .bg-tan{
+    background-color: #efddc7;
 }
 
 main {

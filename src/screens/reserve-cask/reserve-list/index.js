@@ -1,190 +1,193 @@
-import * as React from 'react' ;
-import styled from 'styled-components';
+import * as React from "react";
+import styled from "styled-components";
+import { useTranslation } from "react-i18next";
+import { useConfig } from "#shared/hooks";
 
-import AmericanPNG from '#assets/reserve-cask/american.png' ;
-import NewAgeScotchPNG from '#assets/reserve-cask/new_age_scotch.png' ;
-import UltraRareScotchPNG from '#assets/reserve-cask/ultra_rare_scotch.png' ;
+import PrePopulateModal from "../pre-populate-modal";
+import InvestModal from "../invest-modal";
+
+import AmericanPNG from "#assets/reserve-cask/american.png";
+import NewAgeScotchPNG from "#assets/reserve-cask/new_age_scotch.png";
+import UltraRareScotchPNG from "#assets/reserve-cask/ultra_rare_scotch.png";
 import StairPNG from "#assets/reserve-cask/stair.png";
 
-import { useTranslation } from 'react-i18next';
-import PrePopulateModal from '../pre-populate-modal';
-import SpeakModal from '../speak-modal';
-
 const ReserveList = () => {
+    const config = useConfig();
     const { t } = useTranslation("reserve-cask");
 
     const cardList = [
         {
-            key : 'american' ,
-            img : AmericanPNG
+            key: "american",
+            img: AmericanPNG,
         },
         {
-            key : 'new_age_scotch',
-            img : NewAgeScotchPNG
+            key: "new_age_scotch",
+            img: NewAgeScotchPNG,
         },
         {
-            key : 'ultra_rare_scotch',
-            img : UltraRareScotchPNG
+            key: "ultra_rare_scotch",
+            img: UltraRareScotchPNG,
+        },
+    ];
+
+    const [openPrePopulate, setOpenPrePopulate] = React.useState(false);
+    const [openInvest, setOpenInvest] = React.useState(false);
+    const [openCalender, setOpenOpenCalender] = React.useState(false);
+
+    React.useEffect(() => {
+        if (openCalender) {
+            const node = document.querySelector(".calendly-popup-close");
+            node.addEventListener("click", listener);
+
+            function listener() {
+                node.removeEventListener("click", listener);
+                setOpenOpenCalender(false);
+            }
         }
-    ]
+    }, [openCalender]);
 
-    const [openPrePopulate, setOpenPrePopulate] = React.useState(true) ;
-    const [openSpeak , setOpenSpeak] = React.useState(false) ;
+    const handleOpenCalendly = React.useCallback(() => {
+        window.Calendly.initPopupWidget({
+            url: config.calendly.whiskeyvestUrl,
+        });
+        setOpenOpenCalender(true);
+    }, [config.calendly.whiskeyvestUrl, setOpenOpenCalender]);
 
-    const closePrePopulate = () => {
-        setOpenPrePopulate(!openPrePopulate) ;
-    }
+    const closePrePopulate = (flag) => {
+        setOpenPrePopulate(!openPrePopulate);
+    };
 
-    const closeSpeak = () => {
-        setOpenSpeak(!openSpeak) ;
-    }
+    const closeInvest = (flag) => {
+        setOpenInvest(!openInvest);
+    };
 
     return (
         <>
             <ReserveListDiv>
                 <ReserveListWrapper>
-                    {
-                        cardList.map(card => (
-                            <ReserveCard key={card.key}
-                                className={card.key === 'ultra_rare_scotch' ? 'active' : ''}
+                    {cardList.map((card) => (
+                        <ReserveCard key={card.key} className={card.key === "ultra_rare_scotch" ? "active" : ""}>
+                            <ReserveCardTitle className={card.key === "ultra_rare_scotch" ? "active" : ""}>
+                                {t(`reserve_cask.reserve_list.${card.key}.name`)}
+                            </ReserveCardTitle>
+                            <ReserveThumnail>
+                                <img src={card.img} />
+                            </ReserveThumnail>
+                            <ReservePrice className={card.key === "ultra_rare_scotch" ? "active" : ""}>
+                                {t(`reserve_cask.reserve_list.${card.key}.price`)}
+                            </ReservePrice>
+                            <ReserveBtn
+                                onClick={() => {
+                                    if (card.key === "ultra_rare_scotch") {
+                                        handleOpenCalendly();
+                                    } else {
+                                        setOpenPrePopulate(true);
+                                    }
+                                }}
                             >
-                                <ReserveCardTitle
-                                    className={card.key === 'ultra_rare_scotch' ? 'active' : ''}
-                                >
-                                    {t(`reserve_cask.reserve_list.${card.key}.name`)}
-                                </ReserveCardTitle>
-                                <ReserveThumnail>
-                                    <img src={card.img} />
-                                </ReserveThumnail>
-                                <ReservePrice
-                                    className={card.key === 'ultra_rare_scotch' ? 'active' : ''}
-                                >
-                                    {t(`reserve_cask.reserve_list.${card.key}.price`)}
-                                </ReservePrice>
-                                <ReserveBtn
-                                    onClick={() => {
-                                        if(card.key === 'ultra_rare_scotch') {
-                                            setOpenSpeak(true) ;
-                                        }
-                                    }}
-                                >
-                                    {t(`reserve_cask.reserve_list.${card.key}.btn_label`)}
-                                </ReserveBtn>
-                                <ReserveDescription
-                                    className={card.key === 'ultra_rare_scotch' ? 'active' : ''}
-                                >
-                                    {t(`reserve_cask.reserve_list.${card.key}.description`)}
-                                </ReserveDescription>
-                            </ReserveCard>
-                        ))
-                    }
+                                {t(`reserve_cask.reserve_list.${card.key}.btn_label`)}
+                            </ReserveBtn>
+                            <ReserveDescription className={card.key === "ultra_rare_scotch" ? "active" : ""}>
+                                {t(`reserve_cask.reserve_list.${card.key}.description`)}
+                            </ReserveDescription>
+                        </ReserveCard>
+                    ))}
                 </ReserveListWrapper>
-                <BrandDiv
-                >
-                    <BrandImageDiv >
+                <BrandDiv>
+                    <BrandImageDiv>
                         <img src={StairPNG} />
                     </BrandImageDiv>
-                    <BrandQuestion>
-                        {t(`reserve_cask.reserve_list.brand.question`)}
-                    </BrandQuestion>
-                    <BrandDescription>
-                        {t(`reserve_cask.reserve_list.brand.description`)}
-                    </BrandDescription>
-                    <BrandButton>
-                        {t(`reserve_cask.reserve_list.brand.btn_label`)}
+                    <BrandQuestion>{t("reserve_cask.reserve_list.brand.question")}</BrandQuestion>
+                    <BrandDescription>{t("reserve_cask.reserve_list.brand.description")}</BrandDescription>
+                    <BrandButton
+                        onClick={() => {
+                            setOpenInvest(true);
+                        }}
+                    >
+                        {t("reserve_cask.reserve_list.brand.btn_label")}
                     </BrandButton>
                 </BrandDiv>
             </ReserveListDiv>
 
-            {
-                openPrePopulate && <PrePopulateModal
-                    isModal={openPrePopulate}
-                    closeModal={closePrePopulate}
-                />
-            }
+            {openPrePopulate && <PrePopulateModal isModal={openPrePopulate} closeModal={closePrePopulate} />}
 
-            {
-                openSpeak && <SpeakModal
-                    isModal={openSpeak}
-                    closeModal={closeSpeak}
-                />
-            }
+            {openInvest && <InvestModal isModal={openInvest} closeModal={closeInvest} />}
         </>
-    )
-}
+    );
+};
 
 const ReserveListDiv = styled.div`
-    display : flex ;
-    justify-content : center ;
+    display: flex;
+    justify-content: center;
 
-    flex-direction : column ;
+    flex-direction: column;
 
-    position : relative ;
-    z-index : 5 ;
+    position: relative;
+    z-index: 5;
 
-    width : 100%
-`
+    width: 100%;
+`;
 
 const ReserveListWrapper = styled.div`
-    display : flex ;
-    justify-content : center ;
-    gap : 30px ;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
 
-    flex-wrap : wrap ;
-`
+    flex-wrap: wrap;
+`;
 
 const ReserveCard = styled.div`
-    display : flex ;
-    flex-direction : column ;
-    align-items : center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-    background : white ;
+    background: white;
 
-    gap : 20px ;
+    gap: 20px;
 
-    padding : 20px;
-    border: 2px solid #242E35;
+    padding: 20px;
+    border: 2px solid #242e35;
 
-    width : 370px ;
-    min-width : 370;
+    width: 370px;
+    min-width: 370;
 
     &.active {
-        background : #191B1C;
+        background: #191b1c;
     }
 
-    cursor : pointer ;
+    cursor: pointer;
 
     @media screen and (max-width: 384px) {
-        width : 100%;
+        width: 100%;
     }
-`
+`;
 
-const ReserveCardTitle  = styled.div`
-    padding-top : 20px ;
-    font-size : 48px ;
-    font-family: Roslindaledisplaycondensed,sans-serif;
+const ReserveCardTitle = styled.div`
+    padding-top: 20px;
+    font-size: 48px;
+    font-family: Roslindaledisplaycondensed, sans-serif;
     font-weight: 500;
-    color : black ;
+    color: black;
 
     &.active {
-        color : #FAE8D1;
+        color: #fae8d1;
     }
 
     @media screen and (max-width: 380px) {
-        font-size : 32px
+        font-size: 32px;
     }
-`
+`;
 
 const ReserveThumnail = styled.div`
-    display : flex ;
-    justify-content : center ;
-    align-items : center ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    height : 300px;
-`
+    height: 300px;
+`;
 
 const ReservePrice = styled.div`
-    font-family: VinovestMedium,sans-serif;
+    font-family: VinovestMedium, sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
@@ -193,12 +196,12 @@ const ReservePrice = styled.div`
     text-align: center;
     letter-spacing: 0.005em;
 
-    color: #242E35;
+    color: #242e35;
 
     &.active {
-        color : #FAE8D1 ;
+        color: #fae8d1;
     }
-`
+`;
 
 const ReserveBtn = styled.div`
     width: 310px;
@@ -206,23 +209,23 @@ const ReserveBtn = styled.div`
     left: 434px;
     top: 409px;
 
-    background: #A86D37;
+    background: #a86d37;
     border-radius: 3px;
-    color : white;
+    color: white;
 
-    display : flex;
-    justify-content : center ;
-    align-items : center ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    cursor : pointer ;
+    cursor: pointer;
 
     &:hover {
-        background : #87572c ;
+        background: #87572c;
     }
-`
+`;
 
 const ReserveDescription = styled.div`
-    font-family: VinovestMedium,sans-serif;
+    font-family: VinovestMedium, sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -230,121 +233,120 @@ const ReserveDescription = styled.div`
     text-align: center;
     letter-spacing: 0.005em;
 
-    color: #242E35;
+    color: #242e35;
 
     &.active {
-        color : #FAE8D1 ;
+        color: #fae8d1;
     }
-`
+`;
 const BrandImageDiv = styled.div`
-    display : none ;
+    display: none;
     @media screen and (max-width: 1110px) {
-        display : flex ;
-        justify-content : flex-end ;
+        display: flex;
+        justify-content: flex-end;
     }
 
-    
     & img {
         @media screen and (max-width: 590px) {
-            width : 100%;
+            width: 100%;
         }
     }
-`
+`;
 
 const BrandDiv = styled.div`
-    margin-top : 50px ;
+    margin-top: 50px;
 
-    background : #3C400C;
-    
+    background: #3c400c;
+
     background-image: url(${StairPNG});
     background-repeat: no-repeat;
     background-position: top right;
-    background-size : 300px 220px ;
+    background-size: 300px 220px;
 
     @media screen and (max-width: 1110px) {
-        background-image : none ;
+        background-image: none;
     }
-`
+`;
 
 const BrandQuestion = styled.div`
-    font-size : 40px ;
-    font-weight : 700;
-    text-align : left ;
-    font-family : RoslindaleDisplayCondensed ;
+    font-size: 40px;
+    font-weight: 700;
+    text-align: left;
+    font-family: RoslindaleDisplayCondensed;
 
-    width : fit-content ;
+    width: fit-content;
 
-    padding-top : 50px ;
-    padding-left : 50px;
+    padding-top: 50px;
+    padding-left: 50px;
 
     @media screen and (max-width: 1110px) {
-       font-size : 32px;
+        font-size: 32px;
     }
 
     @media screen and (max-width: 385px) {
-        padding-left : 10px;
-        padding-right : 10px ;
+        padding-left: 10px;
+        padding-right: 10px;
 
-        text-align : center ;
+        text-align: center;
 
-        width : 100% ;
+        width: 100%;
     }
-`
+`;
 
 const BrandDescription = styled.div`
-    font-size : 40px ;
-    font-weight : 700;
-    text-align : left ;
-    font-family : RoslindaleDisplayCondensed ;
+    font-size: 40px;
+    font-weight: 700;
+    text-align: left;
+    font-family: RoslindaleDisplayCondensed;
 
-    width : fit-content ;
-    padding-left : 50px;
+    width: fit-content;
+    padding-left: 50px;
 
     @media screen and (max-width: 1110px) {
-        font-size : 32px;
+        font-size: 32px;
     }
 
     @media screen and (max-width: 385px) {
-        padding-left : 10px;
-        padding-right : 10px ;
+        padding-left: 10px;
+        padding-right: 10px;
 
-        text-align : center ;
+        text-align: center;
 
-        width : 100% ;
+        width: 100%;
     }
-`
+`;
 
 const BrandButton = styled.div`
-    margin-top : 40px ;
-    margin-left : 50px ;
-    margin-bottom : 50px ;
+    margin-top: 40px;
+    margin-left: 50px;
+    margin-bottom: 50px;
 
-    cursor : pointer ;
-    border : 1px solid #FAE8D1;
-    display : flex ;
-    justify-content : center ;
-    align-items : center ;
+    cursor: pointer;
+    border: 1px solid #fae8d1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    text-transform : uppercase ;
+    text-transform: uppercase;
 
-    padding-left : 20px;
-    padding-right : 20px ;
-    padding-top : 10px;
-    padding-bottom : 10px ;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 
-    width : fit-content ;
+    width: fit-content;
 
     @media screen and (max-width: 385px) {
-        padding-left : 10px;
-        padding-right : 10px ;
+        padding-left: 10px;
+        padding-right: 10px;
 
-        margin-left : 10px;
-        margin-right : 10px;
+        margin-left: 10px;
+        margin-right: 10px;
 
-        text-align : center ;
+        text-align: center;
 
-        width : auto ;
+        width: auto;
     }
-`
+`;
 
-export default ReserveList ;
+export default ReserveList;

@@ -48,6 +48,17 @@
         }
     },
     "reserve_modals" : {
+        "whiskey_list": {
+            "american": {
+                "name": "American Whiskey"
+            },
+            "new_age_scotch_light": {
+                "name": "New Age Scotch (Lightly Peated)"
+            },
+            "new_age_scotch_heavy": {
+                "name": "New Age Scotch (Heavily Peated)"
+            }
+        },
         "whiskey_reservation" : {
             "title" : "Whiskey Reservation"
         },

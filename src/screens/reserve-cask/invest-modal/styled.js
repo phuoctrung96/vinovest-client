@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const ModalContainer = styled.div`
     width: 904px;
     margin: 0 auto;
-    border-radius: 0px;
-    background : white ;
+    border-radius: 10px;
+    background: white;
 
     @media screen and (max-width: 1023px) {
         width: 100%;
@@ -12,20 +12,19 @@ export const ModalContainer = styled.div`
 `;
 
 export const ModalTitle = styled.div`
-    padding : 20px ;
+    padding: 20px;
 
-    font-size : 32px;
-    font-family : RoslindaleDisplayCondensed;
+    font-size: 32px;
+    font-family: RoslindaleDisplayCondensed;
 
-    border : 1px solid lightgray;
-    background : white ;
-`
+    border: 1px solid lightgray;
+    border-radius: 10px 10px 0px 0px;
+    background: white;
+`;
 export const ModalContent = styled.div`
-    padding: 20px ;
-`
-export const ModalFooter = styled.div`
-
-`
+    padding: 20px;
+`;
+export const ModalFooter = styled.div``;
 
 export const modalBaseStyles = `
     background: transparent;
@@ -51,79 +50,95 @@ export const modalBaseStyles = `
 
 export const TableContainer = styled.div`
     & table {
-        width : 100%;
+        width: 100%;
         & tr {
             &:first-child {
-                color : #A8ABAD ;
+                color: #a8abad;
             }
 
             & td {
-                padding : 20px;
+                padding: 20px;
             }
         }
     }
 
-    margin-bottom : 50px;
-`
-export const Input = styled.input`
-    border: 1px solid #EEEEEE;
+    margin-bottom: 50px;
+`;
+
+export const InputBox = styled.div`
+    display: flex;
+    align-items: center;
+    border: 1px solid #eeeeee;
     border-radius: 3px;
-    outline : none ;
-    padding : 20px ;
-`
+    padding-left: 20px;
+`;
+
+export const AmountInput = styled.input`
+    border: none;
+    outline: none;
+    padding: 20px;
+    padding-left: 5px;
+`;
+
+export const Input = styled.input`
+    border: 1px solid #eeeeee;
+    border-radius: 3px;
+    outline: none;
+    padding: 20px;
+`;
 
 export const Button = styled.button`
     width: 100%;
     height: 65px;
 
-    background: ${(props) => (props.color === 'transparent' ? "none" : "#51AC55")};
-    border-radius: 10px; 
-    border : none ;
-    cursor : pointer ;
+    background: ${(props) => (props.color === "transparent" ? "#A8ABAD" : "#51AC55")};
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
 
-    color: ${(props) => (props.color === 'transparent' ? "black" : "white")};
-    display : flex;
-    align-items : center;
-    justify-content : center;
+    color: ${(props) => (props.color === "transparent" ? "black" : "white")};
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    transition : 0.2s;
-    text-transform : uppercase;
-    font-size : 25px;
+    transition: 0.2s;
+    text-transform: uppercase;
+    font-size: 25px;
 
     &:hover {
-        background: ${(props) => (props.color === 'transparent' ? "lightgray" : "#3a7c3d")};
+        background: ${(props) => (props.color === "transparent" ? "lightgray" : "#3a7c3d")};
     }
-`
+`;
 
 export const FormGroup = styled.div`
-    display : flex ;
+    display: flex;
 
-    padding : 10px ;
-    display : flex ;
-    gap : 15px;
+    padding: 10px;
+    display: flex;
+    gap: 15px;
 
     &.col {
-        align-items : center ;
+        align-items: center;
     }
 
     &.row {
-        flex-direction : column ;
+        flex-direction: column;
     }
 
-    margin-bottom : 20px;
+    margin-bottom: 20px;
 
     & input {
-        width : 100%;
+        width: 100%;
     }
 
-    @media screen and (max-width : 310px) {
-        flex-direction : column ;
+    @media screen and (max-width: 310px) {
+        flex-direction: column;
     }
-`
+`;
 
 export const Label = styled.label`
-    color : #A8ABAD;
-    font-size : 20px;
+    color: #a8abad;
+    font-size: 20px;
 
-    min-width : 150px;
-`
+    min-width: 150px;
+`;

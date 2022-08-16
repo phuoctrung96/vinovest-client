@@ -11,6 +11,7 @@ export interface IAppConfig {
         wineExpertsUrl: string;
         huntervino: string;
         rebalancing: string;
+        whiskeyvestUrl: string;
     };
     ssoOidcRedirectConfig: {
         display: string;
@@ -69,6 +70,7 @@ const config: IAppConfig = {
         wineExpertsUrl: "https://calendly.com/vinovest-team",
         huntervino: "https://calendly.com/huntervino/30min",
         rebalancing: "https://calendly.com/vinovestofficial/video-chat-with-vinovest-rebalancing",
+        whiskeyvestUrl: "https://calendly.com/vinovestofficial/ask-about-whiskeyvest",
     },
     stripeKey: "pk_test_KzpJ36ubFFlECuzf5eMVGz5H00esyPcPve",
     stripeKeyHK:
@@ -100,7 +102,12 @@ const config: IAppConfig = {
     singualrAPIKey: "vinovest_c19743cf",
     singualrSecretKey: "4ac4dd62c53fbb32747289bf54660e20",
     singularProductId: "co.vinovest.staging",
-    singularBaseLink: "https://vinovest-staging.sng.link/Aiwio/6apq?_dl=vinovest%3A%2F%2F&_smtype=3"
+    singularBaseLink: "https://vinovest-staging.sng.link/Aiwio/6apq?_dl=vinovest%3A%2F%2F&_smtype=3",
+    googleSheetsClientEmail: "vinovest-next-server-780@vinovest-web-client.iam.gserviceaccount.com",
+    googleSheetsPrivateKey: (process.env.GOOGLE_SHEETS_PRIVATE_KEY || "").replace(/\\n/g, "\n"),
+    spreadSheetId: "1b7AopkiVRcSdW9hWKkz5FBFes1RY2fNZjmP14w7qi60",
+    caskSelectionSheetId: "0",
+    cashSelectionSheetId: "202838296",
 };
 if (process.env.APP_ENV === "local") {
     config.apiEndpoint = "http://localhost:8080";
