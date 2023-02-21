@@ -16,7 +16,7 @@
     },
     "dependencies": {
         "@amir04lm26/react-modern-calendar-date-picker": "^1.0.1",
-        "@emotion/react": "^11.4.0",
+        "@emotion/react": "^11.10.6",
         "@okta/okta-auth-js": "^4.9.2",
         "@okta/okta-react": "^4.1.0",
         "@sentry/react": "^6.12.0",
